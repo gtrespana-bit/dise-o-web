@@ -1,467 +1,465 @@
 ---
 import Base from '../layouts/Base.astro';
-
-const waMessage = encodeURIComponent('Hola, vi su web de diseño web. Quiero una valoración para mi negocio. Mi empresa es...');
-const waLink = `https://wa.me/584000000000?text=${waMessage}`;
-
-const massiveProjects = [
-  {
-    cat: 'PLATAFORMA INMOBILIARIA · PROYECTO ENORME',
-    name: 'VendeT Inmuebles',
-    desc: 'Marketplace inmobiliario completo: Next.js 14 + Supabase SSR + S3 + Auth + chat interno + panel admin + suscripciones + destacados + PWA + Sentry. 37 carpetas de rutas, API, i18n, auditoría. En producción.',
-    href: 'https://github.com/gtrespana-bit/vendet-inmuebles',
-    year: '2025-26',
-    img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format',
-    tags: ['Next.js 14','Supabase','S3 & Sharp','Realtime Chat','PWA','Sentry'],
-    stats: ['inmuebles + inmueble_imagenes + perfiles + pagos','vista vw_propiedades_publicas','37 rutas locales'],
-    linkLabel: 'Ver repo + schema DB'
-  },
-  {
-    cat: 'MARKETPLACE GENERAL VENEZUELA · PROYECTO ENORME',
-    name: 'Marketplace VZLA / Todo Anuncios',
-    desc: 'Carros, tecnología, hogar, moda: todo. Catálogo con filtros avanzados, chat Realtime Supabase, sistema de créditos, verificación, reputación, push notifications, moderación automática, rate-limit, PWA offline, tasa BCV. Deploy Vercel vendet.online',
-    href: 'https://github.com/gtrespana-bit/Marketplace-vzla',
-    year: '2025',
-    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format',
-    tags: ['Marketplace','Supabase Realtime','Push + Credits','Moderación IA'],
-    stats: ['conversaciones + mensajes + reseñas + favoritos','categorias.ts con 8 categorías, marcas, campos dinámicos','SW stale-while-revalidate TTL 7d'],
-    linkLabel: 'Ver arquitectura completa'
-  }
-];
-
-const projects = [
-  {
-    cat: 'Reforma Residencial / Astro SEO 98 · Lead Gen',
-    name: 'ReformaT Venezuela',
-    desc: 'Web de alto estándar con SEO programático, 80+ landings por zona (San Diego, Valencia...), blog, sitemap inteligente con prioridades por Carabobo, IndexNow, PWA. Genera leads diarios.',
-    href: 'https://github.com/gtrespana-bit/reformat-venezuela',
-    year: '2024-26',
-    img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format',
-    tags: ['Astro','SEO Local','80+ landings']
-  },
-  {
-    cat: 'SaaS Construcción / Python Desktop + PDF',
-    name: 'Presupuestos — ReformaT',
-    desc: 'App desktop Python con ventana propia, catálogo de partidas reutilizables, importar Excel CYPE, firma digital, PDF con ReportLab + Lato + marca de agua, facturas, backup ZIP. No es web: es software.',
-    href: 'https://github.com/gtrespana-bit/presupuestos',
-    year: '2025-26',
-    img: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200&q=80&auto=format',
-    tags: ['Python','ReportLab PDF','CYPE Import','Desktop App']
-  },
-  {
-    cat: 'Estudio Digital / Next.js + 3D',
-    name: 'Majestic Web Studio',
-    desc: 'Agencia premium con Spline 3D, Framer Motion, magnetic buttons, holo cards. Concepto boutique caro.',
-    href: 'https://github.com/gtrespana-bit/Majestic',
-    year: '2025',
-    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format',
-    tags: ['Next.js 14','3D','Framer']
-  },
-  {
-    cat: 'Colección 20+ Clínicas & Inmobiliarias',
-    name: 'Beauty, Salud & Real Estate',
-    desc: '12+ webs HTML pero convertidas en sistema: misma conversión WhatsApp, fotos optimizadas, agenda. EuroKlinik, PodoDent, AxularVet, Vanity Face, GGBeauty Premium.',
-    href: '#',
-    year: '2023-25',
-    img: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&auto=format',
-    tags: ['Conversion','WhatsApp','Local SEO']
-  },
-];
-
-const services = [
-  { n:"01", t:"Diseño Web a Medida", d:"Nada de plantillas de $50. Cada web se diseña desde cero según tu cliente ideal, ticket y posicionamiento. Figma + código limpio. Stack Astro.", price:"Desde $1.200" },
-  { n:"02", t:"Re-Diseño Estratégico", d:"Ya tienes web pero se ve barata. La rehacemos para que refleje el nivel de tu oficina. Mismo dominio, 3x más confianza.", price:"Desde $900" },
-  { n:"03", t:"Plataformas & Marketplaces", d:"Si necesitas más que una landing: VendeT demuestra que puedo con Supabase, S3, chat, auth, pagos, admin, PWA. Para inmobiliarias o clasificados.", price:"Desde $5k" },
-  { n:"04", t:"SEO Local + Performance + PWA", d:"Para que aparezcas en 'clínica estética San Diego'. Arquitectura probada en ReformaT + Marketplace (sitemap, IndexNow, OG).", price:"Incluido" },
-];
-
-const process = [
-  { k:"01", t:"Diagnóstico", d:"Audito tu web actual, competencia y cliente ideal. Te digo honestamente si necesitas web nueva o no. Sin vender humo." },
-  { k:"02", t:"Dirección de Arte", d:"Moodboard, tipografías, paleta, referencias. Definimos si tu negocio debe verse boutique, clínico, inmobiliario de lujo o técnico." },
-  { k:"03", t:"Diseño & Build", d:"Diseño en Figma + desarrollo en Astro/Next.js. Optimización de imágenes, SEO técnico, WhatsApp, formularios, analytics. 2-3 semanas." },
-  { k:"04", t:"Lanzamiento & Leads", d:"Deploy, Search Console, IndexNow, sitemap, medición. Tu web empieza a generar consultas, no solo visitas." },
-]
+const wa = encodeURIComponent('Hola, he revisado su portfolio técnico (VendeT + ReformaT). Me gustaría solicitar una auditoría de mi negocio para valorar si encajamos. Empresa:');
+const waLink = `https://wa.me/584000000000?text=${wa}`;
 ---
 
-<Base title="Diseño Web para Negocios que ya Facturan | Estudio Boutique — Venezuela & España" description="No diseñamos webs baratas. Diseñamos webs que hacen que tu clínica, inmobiliaria o reforma se vea del nivel que cobra. Astro, SEO real y diseño medio-alto.">
+<Base title="Estudio de Diseño y Desarrollo para Negocios Premium | Sistemas Web y Plataformas — VE & ES" description="Estudio boutique que diseña sistemas digitales para negocios que compiten por confianza. Desde webs de alto rendimiento (ReformaT 98 Lighthouse) hasta marketplaces completos (VendeT: Next.js + Supabase + S3 + Realtime + PWA).">
+
+  <style is:inline>
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap');
+  </style>
+
+  <!-- GLOBAL NOISE -->
+  <div class="pointer-events-none fixed inset-0 z-[1] opacity-[0.025] mix-blend-multiply" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')"></div>
+
+  <!-- TOP BAR -->
+  <div class="relative z-20 bg-[#0A0A0B] text-[#FFFEFB] text-[11px] tracking-[0.14em] uppercase">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 h-[36px] flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <span class="hidden md:flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-[#C9A84C]"></span> Disponibilidad Q2 2026: 2 proyectos</span>
+        <span class="flex items-center gap-2 opacity-70">San Diego, Carabobo — Lanzarote, España</span>
+      </div>
+      <div class="flex items-center gap-6 opacity-70">
+        <span class="hidden md:block">Response &lt; 2h</span>
+        <a href={waLink} class="underline decoration-white/20 underline-offset-4 hover:decoration-white">WhatsApp — Auditoría gratuita</a>
+      </div>
+    </div>
+  </div>
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#FFFEFB]/70 border-b border-[#E8E2D9]">
-    <div class="mx-auto max-w-[1440px] px-6 md:px-10 h-[64px] flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-[#0E0E10] text-white grid place-items-center font-serif text-[18px]">D</div>
-        <div class="leading-none">
-          <div class="font-semibold tracking-tight text-[14px]">DISEÑO WEB</div>
-          <div class="text-[10px] tracking-[0.22em] text-[#7A758F] -mt-[1px]">BOUTIQUE ESTUDIO — VE / ES</div>
+  <header class="sticky top-0 z-30 backdrop-blur-[24px] bg-[#FFFEFB]/80 border-b border-[#EDE8E1]">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 h-[72px] flex items-center justify-between">
+      <div class="flex items-center gap-10">
+        <div class="flex items-center gap-3">
+          <div class="w-[32px] h-[32px] rounded-full bg-[#0A0A0B] text-white grid place-items-center font-serif text-[16px] tracking-tight">D</div>
+          <div class="leading-[0.9]">
+            <div class="font-[620] tracking-[-0.02em] text-[13px] uppercase">DISEÑO WEB</div>
+            <div class="font-mono text-[10px] tracking-[0.2em] text-[#9A958E]">BOUTIQUE  EST. 2023</div>
+          </div>
         </div>
+        <nav class="hidden lg:flex items-center gap-8 text-[12.5px] tracking-[0.04em] font-[500]">
+          <a href="#capacidad" class="opacity-60 hover:opacity-100 transition">Capacidad técnica</a>
+          <a href="#proyectos" class="opacity-60 hover:opacity-100 transition">Proyectos</a>
+          <a href="#metodo" class="opacity-60 hover:opacity-100 transition">Método</a>
+          <a href="#estudio" class="opacity-60 hover:opacity-100 transition">Estudio</a>
+        </nav>
       </div>
-      <nav class="hidden md:flex items-center gap-8 text-[13px] tracking-wide">
-        <a href="#trabajos" class="hover:opacity-60 transition">Trabajos</a>
-        <a href="#proceso" class="hover:opacity-60 transition">Proceso</a>
-        <a href="#servicios" class="hover:opacity-60 transition">Servicios</a>
-        <a href={waLink} class="ml-2 px-5 h-9 rounded-full bg-[#0E0E10] text-white grid place-items-center hover:bg-black transition">Valoración gratuita</a>
-      </nav>
-      <a href={waLink} class="md:hidden px-4 h-8 rounded-full bg-[#0E0E10] text-white text-[12px] grid place-items-center">WhatsApp</a>
+      <div class="flex items-center gap-3">
+        <div class="hidden md:flex items-center gap-2 text-[11px] font-mono text-[#9A958E] border border-[#EDE8E1] rounded-full px-3 h-[32px]"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> BUILD v2.6 · Supabase Realtime OK</div>
+        <a href={waLink} class="h-[36px] px-5 rounded-full bg-[#0A0A0B] text-white text-[12.5px] font-[500] tracking-wide grid place-items-center hover:bg-black transition">Solicitar auditoría</a>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden">
-    <!-- subtle grid + blobs -->
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute inset-0 opacity-[0.045]" style="background-image: linear-gradient(#0E0E10 1px, transparent 1px), linear-gradient(90deg, #0E0E10 1px, transparent 1px); background-size: 36px 36px"></div>
-      <div class="absolute -top-[40%] left-1/2 -translate-x-1/2 w-[1200px] h-[800px] rounded-full blur-[120px] opacity-[0.18] bg-gradient-to-br from-[#E6D9FF] via-[#FFE9D3] to-[#FFFBEB]"></div>
-      <div class="absolute top-[10%] right-[-10%] w-[600px] h-[600px] rounded-full blur-[100px] opacity-20 bg-[#0E0E10] mix-blend-multiply"></div>
-    </div>
-
-    <div class="relative mx-auto max-w-[1440px] px-6 md:px-10 pt-16 md:pt-28 pb-16">
-      <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-10 items-start">
+  <!-- HERO EDITORIAL -->
+  <section class="relative z-10 bg-[#FFFEFB] overflow-hidden">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 pt-14 md:pt-28 pb-16 md:pb-28">
+      <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-20 items-start">
         <div>
-          <div data-reveal class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E8E2D9] text-[11px] tracking-[0.18em] uppercase">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#0E0E10] animate-pulse"></span> No hacemos webs de $200. Hacemos webs que cierran clientes de $2.000
+          <div class="inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase font-mono">
+            <div class="h-[1px] w-10 bg-[#0A0A0B]"></div> Estudio para negocios que facturan por confianza, no por volumen
           </div>
-          <h1 data-reveal class="mt-8 font-serif text-[44px] md:text-[84px] leading-[0.88] tracking-[-0.04em]">
-            Tu negocio<br />
-            <span class="italic font-light">ya factura.</span><br />
-            Tu web debería<br />
-            demostrarlo.
+          <h1 class="mt-8 font-serif text-[52px] md:text-[92px] leading-[0.85] tracking-[-0.05em] font-[350]">
+            Webs que transmiten<br/>
+            <span class="font-[400] italic tracking-[-0.06em]">el nivel de tu</span><br/>
+            negocio. Plataformas<br/>
+            que escalan<br/>
+            tu operación.
           </h1>
-          <p data-reveal class="mt-8 max-w-[560px] text-[17px] md:text-[19px] leading-[1.5] text-[#3D3A36] font-light">
-            Estudio boutique para <span class="font-medium text-[#0E0E10]">clínicas, inmobiliarias, reformas y estéticas</span> que no pueden verse baratas. Pero con músculo para <span class="font-medium text-[#0E0E10]">marketplaces completos</span>: VendeT Inmuebles y Marketplace VZLA (Next.js + Supabase + S3 + Realtime + PWA). Desde landing que convierte hasta plataforma que escala.
-          </p>
-
-          <div data-reveal class="mt-10 flex flex-wrap gap-3">
-            <a href={waLink} class="h-[48px] px-7 rounded-full bg-[#0E0E10] text-white text-[15px] font-medium grid place-items-center gap-2 inline-flex hover:translate-y-[-1px] hover:shadow-xl hover:shadow-black/20 transition-all">
-              Solicitar valoración en WhatsApp <span class="ml-2">→</span>
-            </a>
-            <a href="#trabajos" class="h-[48px] px-7 rounded-full bg-white border border-[#E8E2D9] text-[#0E0E10] text-[15px] font-medium grid place-items-center hover:bg-[#F5F2ED] transition">Ver trabajos reales</a>
+          <div class="mt-10 grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-start max-w-[720px]">
+            <p class="text-[17px] leading-[1.6] tracking-[-0.01em] text-[#2A2926] font-light">
+              Diseñamos sistemas digitales con estándares europeos para clínicas, inmobiliarias y estudios de reforma que no pueden permitirse verse genéricos. <span class="font-medium text-[#0A0A0B]">No hacemos webs baratas.</span> Hacemos infraestructuras que convierten visitante en cliente y soportan operación real.
+            </p>
+            <div class="text-[13px] leading-[1.6] text-[#6B6760] border-l border-[#EDE8E1] pl-6">
+              <div class="font-mono text-[10px] tracking-[0.2em] uppercase text-[#9A958E] mb-3">Capacidad probada en producción</div>
+              2 marketplaces completos · 13 tablas + RLS · S3 + Sharp + PWA + Sentry + Realtime chat · 80+ landings SEO con IndexNow · 1 app desktop Python con motor PDF ReportLab
+            </div>
           </div>
 
-          <div data-reveal class="mt-12 grid grid-cols-3 max-w-[520px] border-t border-[#E8E2D9] pt-6">
+          <div class="mt-12 flex flex-wrap gap-3">
+            <a href={waLink} class="group h-[52px] px-8 rounded-full bg-[#0A0A0B] text-white inline-flex items-center gap-3 text-[13.5px] font-medium tracking-wide hover:gap-4 transition-all">
+              Solicitar auditoría gratuita <span class="w-6 h-6 rounded-full bg-white text-black grid place-items-center text-[12px] group-hover:translate-x-0.5 transition">→</span>
+            </a>
+            <a href="#capacidad" class="h-[52px] px-7 rounded-full bg-white border border-[#EDE8E1] inline-flex items-center text-[13.5px] font-medium hover:bg-[#F8F5F0] transition">Ver capacidad técnica — DB schema →</a>
+          </div>
+
+          <div class="mt-16 grid grid-cols-3 max-w-[560px] border-t border-[#EDE8E1] pt-8">
             <div>
-              <div class="font-serif text-[28px] leading-none">30+</div>
-              <div class="mt-2 text-[11px] tracking-[0.12em] uppercase text-[#7A758F] leading-[1.3]">Webs para negocios<br/>locales</div>
+              <div class="flex items-baseline gap-1"><span class="font-serif text-[40px] leading-none tracking-[-0.04em]">2</span><span class="text-[12px] font-mono text-[#9A958E]">marketplaces</span></div>
+              <div class="mt-2 text-[11px] leading-[1.4] tracking-[0.08em] uppercase text-[#9A958E]">VendeT Inmuebles + Marketplace VZLA<br/>Supabase + S3 + Realtime</div>
             </div>
-            <div class="border-l border-[#E8E2D9] pl-6">
-              <div class="font-serif text-[28px] leading-none">98</div>
-              <div class="mt-2 text-[11px] tracking-[0.12em] uppercase text-[#7A758F] leading-[1.3]">Performance<br/>Lighthouse</div>
+            <div class="border-l border-[#EDE8E1] pl-8">
+              <div class="flex items-baseline gap-1"><span class="font-serif text-[40px] leading-none tracking-[-0.04em]">80+</span></div>
+              <div class="mt-2 text-[11px] leading-[1.4] tracking-[0.08em] uppercase text-[#9A958E]">Landings locales<br/>SEO programático ReformaT</div>
             </div>
-            <div class="border-l border-[#E8E2D9] pl-6">
-              <div class="font-serif text-[28px] leading-none">2-3 sem</div>
-              <div class="mt-2 text-[11px] tracking-[0.12em] uppercase text-[#7A758F] leading-[1.3]">Entrega<br/>promedio</div>
+            <div class="border-l border-[#EDE8E1] pl-8">
+              <div class="flex items-baseline gap-1"><span class="font-serif text-[40px] leading-none tracking-[-0.04em]">1</span><span class="text-[12px] font-mono text-[#9A958E]">app desktop</span></div>
+              <div class="mt-2 text-[11px] leading-[1.4] tracking-[0.08em] uppercase text-[#9A958E]">Python + PDF ReportLab<br/>CYPE Import + Facturas</div>
             </div>
           </div>
         </div>
 
-        <!-- Mockup card -->
-        <div data-reveal class="relative lg:sticky lg:top-[112px]">
-          <div class="relative rounded-[32px] bg-white border border-[#E8E2D9] shadow-[0_40px_120px_-20px_rgba(0,0,0,0.18)] p-3 md:p-4">
-            <div class="rounded-[20px] overflow-hidden bg-[#F5F2ED] aspect-[4/3] relative">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80&auto=format" alt="Diseño premium" class="absolute inset-0 w-full h-full object-cover" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-              <!-- floating browser -->
-              <div class="absolute left-4 right-4 bottom-4 rounded-2xl bg-white/90 backdrop-blur-xl border border-white shadow-xl p-4">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <div class="w-2 h-2 rounded-full bg-red-400"></div><div class="w-2 h-2 rounded-full bg-yellow-400"></div><div class="w-2 h-2 rounded-full bg-green-400"></div>
+        <!-- VISUAL STACK BENTO -->
+        <div class="relative lg:sticky lg:top-[120px]">
+          <div class="relative rounded-[32px] bg-[#0A0A0B] p-[1px]">
+            <div class="rounded-[31px] bg-[#111113] overflow-hidden">
+              <!-- top window -->
+              <div class="h-[44px] flex items-center justify-between px-5 border-b border-white/10">
+                <div class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded-full bg-white/20"></div><div class="w-2.5 h-2.5 rounded-full bg-white/20"></div><div class="w-2.5 h-2.5 rounded-full bg-[#C9A84C]"></div></div>
+                <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-white/40">vendet-inmuebles — producción · Vercel · Supabase OK · Sentry OK</div>
+              </div>
+              <div class="aspect-[16/11] relative bg-[#0F0F10]">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&auto=format" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/40 to-transparent"></div>
+                <!-- floating UI -->
+                <div class="absolute left-4 right-4 bottom-4 rounded-[16px] bg-white/[0.94] backdrop-blur-xl border border-white shadow-[0_20px_80px_-20px_rgba(0,0,0,0.6)] p-4">
+                  <div class="flex justify-between items-center">
+                    <div class="text-[11px] font-mono tracking-[0.16em] uppercase text-[#9A958E]">vw_propiedades_publicas • 1,240 registros</div>
+                    <div class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500 text-white font-mono">RLS ACTIVE</div>
                   </div>
-                  <div class="text-[10px] tracking-[0.2em] uppercase text-[#7A758F]">reformat-venezuela.com — 98 Performance</div>
-                </div>
-                <div class="mt-4 h-2 w-2/3 rounded-full bg-[#0E0E10]/10"></div>
-                <div class="mt-2 h-2 w-1/2 rounded-full bg-[#0E0E10]/10"></div>
-                <div class="mt-4 grid grid-cols-3 gap-2">
-                  <div class="h-16 rounded-lg bg-[#F5F2ED] border border-black/5"></div>
-                  <div class="h-16 rounded-lg bg-[#0E0E10]"></div>
-                  <div class="h-16 rounded-lg bg-[#F5F2ED] border border-black/5"></div>
-                </div>
-              </div>
-            </div>
-            <div class="mt-4 flex items-center justify-between px-2">
-              <div class="text-[12px]">
-                <div class="font-medium">Stack usado en tus webs</div>
-                <div class="text-[#7A758F] text-[11px]">Astro · Tailwind · SEO programático · WhatsApp API</div>
-              </div>
-              <div class="w-10 h-10 rounded-full bg-[#0E0E10] text-white grid place-items-center">↗</div>
-            </div>
-          </div>
-          <!-- badge -->
-          <div class="absolute -right-6 -bottom-6 hidden md:flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#0E0E10] text-white shadow-2xl rotate-[-3deg]">
-            <div class="w-8 h-8 rounded-full bg-white text-black grid place-items-center text-[14px]">✓</div>
-            <div class="text-[12px] leading-tight">
-              <div class="font-medium">No plantillas</div>
-              <div class="text-white/60 text-[11px]">Diseño desde cero</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- trust strip -->
-      <div data-reveal class="mt-20 md:mt-32 border-y border-[#E8E2D9] py-6 flex flex-wrap gap-3 items-center justify-between">
-        <div class="text-[11px] tracking-[0.2em] uppercase text-[#7A758F]">Stack real probado en producción:</div>
-        <div class="flex flex-wrap gap-2 text-[12px]">
-          <span class="px-3 py-1 rounded-full bg-[#0E0E10] text-white border">Next.js 14</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Astro SEO 98</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Supabase SSR</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">S3 + Sharp</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Realtime Chat</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">PWA + Push</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Python PDF Engine</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 md:py-32">
-    <div class="grid md:grid-cols-[0.9fr_1.1fr] gap-12">
-      <div data-reveal>
-        <div class="text-[11px] tracking-[0.25em] uppercase text-[#7A758F]">El problema</div>
-        <h2 class="mt-6 font-serif text-[36px] md:text-[56px] leading-[0.9] tracking-[-0.03em]">Una web barata te hace perder clientes caros.</h2>
-      </div>
-      <div data-reveal class="grid gap-6">
-        {[
-          {t:"Se ve genérica, como 1000 negocios más", d:"Usaste la misma plantilla de $30 que tu competencia. El cliente de ticket alto nota al instante que no eres premium y se va a quien sí se ve profesional."},
-          {t:"Lenta, sin SEO, sin conversiones", d:"Carga en 5s, no aparece en Google Maps, sin WhatsApp tracking, sin fotos reales optimizadas. Es un folleto, no una máquina de leads."},
-          {t:"No transmite confianza", d:"Un negocio que cobra $2.000 no puede tener una web que parece de $200. Incongruencia mata cierre."},
-        ].map((i)=>(
-          <div class="flex gap-6 py-6 border-b border-[#E8E2D9] last:border-0">
-            <div class="w-8 h-8 rounded-full bg-[#F5F2ED] border border-[#E8E2D9] grid place-items-center text-[12px]">✕</div>
-            <div>
-              <div class="font-medium text-[17px]">{i.t}</div>
-              <div class="mt-2 text-[15px] leading-[1.6] text-[#5A5754]">{i.d}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- TRABAJOS ENORMES -->
-  <section id="trabajos" class="bg-[#0E0E10] text-[#FFFEFB] py-20 md:py-28 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.06]" style="background-image: linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px); background-size: 40px 40px"></div>
-    <div class="relative mx-auto max-w-[1440px] px-6 md:px-10">
-      <div class="flex flex-wrap items-end justify-between gap-6">
-        <div data-reveal>
-          <div class="text-[11px] tracking-[0.25em] uppercase text-white/50">Proyectos enormes · No solo landings</div>
-          <h2 class="mt-4 font-serif text-[36px] md:text-[64px] leading-[0.9] tracking-[-0.03em] max-w-[780px]">Si puedo construir un marketplace inmobiliario completo, puedo con tu web premium.</h2>
-        </div>
-        <div data-reveal class="text-[14px] text-white/60 max-w-[360px]">Estos no son plantillas. Son plataformas en producción con DB real, auth, pagos, chat, PWA, Sentry y schema complejo documentado. Eso es nivel medio-alto real.</div>
-      </div>
-
-      <div class="mt-16 grid lg:grid-cols-2 gap-6 md:gap-8">
-        {massiveProjects.map((p)=>(
-          <a data-reveal href={p.href} target="_blank" class="group relative rounded-[28px] overflow-hidden bg-[#15151A] border border-white/10 hover:border-white/20 transition">
-            <div class="aspect-[16/10] overflow-hidden">
-              <img src={p.img} class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-[1.2s] ease-[cubic-bezier(.22,1,.36,1)] opacity-90 group-hover:opacity-100" alt={p.name} />
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-            <div class="absolute top-4 left-4 right-4 flex justify-between items-start gap-2">
-              <div class="px-3 py-1 rounded-full bg-[#C9A84C] text-black text-[10px] tracking-[0.2em] uppercase font-semibold">{p.cat}</div>
-              <div class="px-3 py-1 rounded-full bg-white text-black text-[10px] font-mono">{p.year} · ENORME</div>
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 p-7">
-              <div class="font-serif text-[30px] leading-none">{p.name}</div>
-              <div class="mt-3 text-[13px] leading-[1.5] text-white/70 max-w-[58ch]">{p.desc}</div>
-              <div class="mt-3 text-[11px] leading-[1.4] text-white/50 font-mono">
-                {p.stats.map(s=> <div>• {s}</div>)}
-              </div>
-              <div class="mt-4 flex flex-wrap gap-2">
-                {p.tags.map(t=> <span class="text-[11px] px-2.5 py-1 rounded-full bg-white/10 border border-white/10">{t}</span>)}
-              </div>
-              <div class="mt-5 inline-flex items-center gap-2 text-[12px] font-medium text-white border-b border-white/20 pb-1">{p.linkLabel} →</div>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <div class="mt-16 border-t border-white/10 pt-12">
-        <div class="flex flex-wrap justify-between gap-6 items-end">
-          <h3 data-reveal class="font-serif text-[28px] md:text-[40px] leading-[0.9] tracking-[-0.03em] max-w-[520px]">Webs boutique que ya generan clientes.</h3>
-          <div data-reveal class="text-[13px] text-white/50 max-w-[320px]">Landings premium para negocios locales consolidados. Mismo estándar, menor alcance que VendeT, pero mismo cuidado.</div>
-        </div>
-        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projects.map((p)=>(
-            <a data-reveal href={p.href} target="_blank" class="group relative rounded-[24px] overflow-hidden bg-[#1A1A1E] border border-white/10 hover:border-white/20 transition">
-              <div class="aspect-[4/3] overflow-hidden">
-                <img src={p.img} class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-[1.2s]" alt={p.name} />
-              </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-              <div class="absolute top-3 left-3 right-3 flex justify-between">
-                <div class="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur border border-white/20 text-[9px] tracking-[0.18em] uppercase">{p.cat}</div>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-5">
-                <div class="font-serif text-[18px] leading-none">{p.name}</div>
-                <div class="mt-2 text-[12px] leading-[1.4] text-white/60 line-clamp-3">{p.desc}</div>
-                <div class="mt-3 flex flex-wrap gap-1.5">
-                  {p.tags.slice(0,2).map(t=> <span class="text-[10px] px-2 py-1 rounded-full bg-white/10 border border-white/10">{t}</span>)}
+                  <div class="mt-4 grid grid-cols-12 gap-2 font-mono text-[10px]">
+                    <div class="col-span-5 h-[56px] rounded-[10px] bg-[#0A0A0B] text-white p-3 leading-[1.3]">SELECT * FROM inmuebles JOIN inmueble_imagenes ON es_portada = true</div>
+                    <div class="col-span-7 grid grid-cols-3 gap-2">
+                      <div class="rounded-[10px] bg-[#F5F1EB] border border-black/5 p-2"><div class="text-[#9A958E]">S3 Upload</div><div class="mt-1 font-semibold text-[#0A0A0B]">Sharp 48KB</div></div>
+                      <div class="rounded-[10px] bg-[#0A0A0B] text-white p-2"><div class="text-white/50">Chat</div><div class="mt-1">Realtime</div></div>
+                      <div class="rounded-[10px] bg-[#C9A84C] p-2"><div class="opacity-70">PWA</div><div class="mt-1 font-semibold">Offline</div></div>
+                    </div>
+                  </div>
+                  <div class="mt-3 flex gap-2">
+                    <div class="h-1.5 w-[40%] rounded-full bg-[#0A0A0B]"></div><div class="h-1.5 w-[25%] rounded-full bg-[#EDE8E1]"></div><div class="h-1.5 w-[15%] rounded-full bg-[#C9A84C]"></div>
+                  </div>
                 </div>
               </div>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div data-reveal class="mt-12 rounded-2xl bg-white/[0.06] border border-white/10 p-6 md:p-8 flex flex-wrap gap-8 items-center justify-between">
-        <div class="text-[13px] text-white/60 max-w-[340px]">Stack que domino — de landing 98 performance a plataforma con 10 tablas y RLS:</div>
-        <div class="flex flex-wrap gap-2.5 text-[11px]">
-          <span class="px-3 py-1.5 rounded-full bg-white text-black font-medium">Astro 4 + Next.js 14</span>
-          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">Supabase (Postgres + Auth + Storage + Realtime)</span>
-          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">S3 + Sharp</span>
-          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">PWA + Push</span>
-          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">Python PDF Engine</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIFERENCIA -->
-  <section class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 md:py-32">
-    <div class="grid lg:grid-cols-2 gap-16">
-      <div data-reveal>
-        <div class="inline-flex px-3 py-1 rounded-full bg-[#F5F2ED] border border-[#E8E2D9] text-[11px] tracking-[0.2em] uppercase">Cómo trabajo vs Agencias baratas</div>
-        <h2 class="mt-8 font-serif text-[36px] md:text-[52px] leading-[0.92] tracking-[-0.03em]">No es solo diseño bonito. Es diseño que vende.</h2>
-        <div class="mt-8 grid grid-cols-2 gap-4 max-w-[520px]">
-          <div class="rounded-2xl bg-white border border-[#E8E2D9] p-5">
-            <div class="text-[11px] uppercase tracking-[0.2em] text-[#7A758F]">Otros</div>
-            <div class="mt-3 text-[14px] leading-[1.4] text-[#5A5754]">Plantilla WordPress + logo + 5 páginas. Entrega en 3 días. $250.</div>
-          </div>
-          <div class="rounded-2xl bg-[#0E0E10] text-white p-5">
-            <div class="text-[11px] uppercase tracking-[0.2em] text-white/60">Nosotros</div>
-            <div class="mt-3 text-[14px] leading-[1.4]">Diagnóstico + dirección de arte + Astro optimizado + SEO local + medición. 2-3 semanas. Desde $900.</div>
-          </div>
-        </div>
-      </div>
-      <div data-reveal class="space-y-1">
-        {[
-          ["Material correcto para cada uso","Como en ReformaT: cada adhesivo y cada componente se elige según uso real. En web igual: cada sección según objeción de tu cliente."],
-          ["Lo oculto se hace bien antes de cubrir","Performance, Schema, Search Console, OG images, sitemap. Nadie lo ve, pero Google sí."],
-          ["Acabados revisados al detalle","Tipografía, alineaciones, fotos comprimidas en webp, responsive real, no roto en móvil."],
-        ].map(([t,d])=>(
-          <div class="py-8 border-b border-[#E8E2D9] flex gap-6">
-            <div class="hidden md:grid w-10 h-10 rounded-full bg-[#0E0E10] text-white place-items-center shrink-0 text-[14px]">→</div>
-            <div>
-              <div class="font-medium text-[18px]">{t}</div>
-              <div class="mt-2 text-[15px] leading-[1.6] text-[#5A5754]">{d}</div>
+              <div class="p-5 flex items-center justify-between border-t border-white/10">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-white text-black grid place-items-center text-[12px]">◐</div>
+                  <div><div class="text-white text-[12px] font-medium tracking-wide">Stack en producción — marketplace completo</div><div class="text-white/40 text-[11px] font-mono">Next.js 14 · Supabase SSR · S3 · Sharp · Sentry · next-intl</div></div>
+                </div>
+                <div class="w-8 h-8 rounded-full border border-white/20 text-white/60 grid place-items-center">↗</div>
+              </div>
             </div>
           </div>
-        ))}
-        <div class="pt-8 flex gap-3">
-          <div class="w-10 h-10 rounded-full overflow-hidden bg-[#F5F2ED] border border-[#E8E2D9]"><img src="https://i.pravatar.cc/100?img=12" class="w-full h-full object-cover" /></div>
-          <div class="text-[13px] leading-[1.4]">
-            <div class="font-medium">“Recibimos presupuesto por partidas, seguimiento y entrega con checklist. Como una obra bien hecha.”</div>
-            <div class="text-[#7A758F] mt-1">— Cliente ReformaT Venezuela — patrón que replicamos en web</div>
+          <!-- floating metric -->
+          <div class="absolute -right-3 -bottom-8 hidden md:flex items-center gap-3 bg-[#FFFEFB] border border-[#EDE8E1] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)] rounded-[16px] p-3 rotate-[-2deg]">
+            <div class="w-10 h-10 rounded-full bg-[#0A0A0B] text-white grid place-items-center font-mono text-[11px]">98</div>
+            <div class="pr-3"><div class="text-[11px] font-mono tracking-[0.18em] uppercase text-[#9A958E]">ReformaT Performance</div><div class="text-[12px] font-medium">Lighthouse · IndexNow · PWA</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="bg-[#F5F2ED] border-y border-[#E8E2D9] py-20 md:py-28">
-    <div class="mx-auto max-w-[1440px] px-6 md:px-10">
-      <div data-reveal class="flex flex-wrap justify-between gap-8 items-end">
-        <h2 class="font-serif text-[36px] md:text-[64px] leading-[0.9] tracking-[-0.03em]">Servicios para negocios<br/>que ya están establecidos.</h2>
-        <div class="text-[14px] text-[#5A5754] max-w-[320px]">No somos para emprendedores que buscan lo más barato. Somos para negocios que ya facturan y quieren verse del tamaño que son.</div>
-      </div>
-      <div data-reveal class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services.map(s=>(
-          <div class="rounded-[24px] bg-white border border-[#E8E2D9] p-7 md:p-8 flex flex-col">
-            <div class="flex justify-between items-start">
-              <div class="w-10 h-10 rounded-full bg-[#0E0E10] text-white grid place-items-center text-[12px] font-mono">{s.n}</div>
-              <div class="text-[11px] tracking-[0.2em] uppercase px-2.5 py-1 rounded-full bg-[#F5F2ED] border border-[#E8E2D9]">{s.price}</div>
-            </div>
-            <div class="mt-8 font-serif text-[24px] leading-none tracking-[-0.02em]">{s.t}</div>
-            <div class="mt-4 text-[14px] leading-[1.6] text-[#5A5754]">{s.d}</div>
-            <div class="mt-auto pt-8"><a href={waLink} class="text-[13px] font-medium underline underline-offset-4">Solicitar este servicio →</a></div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO -->
-  <section id="proceso" class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 md:py-32">
-    <div data-reveal class="flex items-center gap-4">
-      <div class="h-[1px] w-12 bg-[#0E0E10]"></div><div class="text-[11px] tracking-[0.3em] uppercase">Proceso — 2 a 3 semanas</div>
-    </div>
-    <div class="mt-12 grid md:grid-cols-4 gap-8">
-      {process.map(p=>(
-        <div data-reveal class="relative">
-          <div class="font-serif text-[64px] leading-none opacity-[0.08]">{p.k}</div>
-          <div class="mt-2 font-medium text-[18px]">{p.t}</div>
-          <div class="mt-3 text-[14px] leading-[1.6] text-[#5A5754]">{p.d}</div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- FILTER / NO PARA TODOS -->
-  <section class="mx-auto max-w-[1440px] px-6 md:px-10 pb-20">
-    <div data-reveal class="rounded-[32px] bg-[#0E0E10] text-white p-8 md:p-12 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+  <!-- MANIFESTO EDITORIAL -->
+  <section class="relative bg-[#F8F5F0] border-y border-[#EDE8E1]">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32 grid lg:grid-cols-[0.9fr_1.1fr] gap-16 md:gap-24">
       <div>
-        <div class="text-[11px] tracking-[0.25em] uppercase text-white/50">Filtro honesto</div>
-        <h3 class="mt-4 font-serif text-[32px] md:text-[44px] leading-[0.9] tracking-[-0.03em]">No trabajo con todo el mundo. Y ese es el punto.</h3>
-        <div class="mt-8 grid gap-4 text-[14px] leading-[1.6] text-white/70">
-          <div class="flex gap-3"><span class="text-white">✓</span> Si tu negocio ya factura, tienes oficina/local físico y sabes que tu cliente paga por confianza.</div>
-          <div class="flex gap-3"><span class="text-white">✓</span> Si valoras diseño sobrio, rápido y que aparezca en Google, no efectos que marean.</div>
-          <div class="flex gap-3"><span class="text-white">✕</span> Si buscas web por $200 en 2 días, no soy tu opción. Hay 1000 en Fiverr.</div>
-        </div>
+        <div class="font-mono text-[11px] tracking-[0.25em] uppercase text-[#9A958E]">Manifiesto — Por qué una web barata te cuesta clientes caros</div>
+        <h2 class="mt-8 font-serif text-[40px] md:text-[56px] leading-[0.88] tracking-[-0.04em]">Si cobras premium,<br/>no puedes verte<br/>como commodity.</h2>
+        <div class="mt-8 h-[1px] w-[80px] bg-[#0A0A0B]"></div>
+        <p class="mt-8 font-[300] text-[15px] leading-[1.7] text-[#5A5753] max-w-[44ch]">Un cliente que paga $1.800 por una rehabilitación integral en El Trigal o $700 por un tratamiento en clínica estética decide en 4 segundos si confía. Tu web es su primera visita a tu oficina. Si se ve como plantilla de $30, la conclusión es inevitable.</p>
       </div>
-      <div class="rounded-[20px] bg-white text-[#0E0E10] p-7">
-        <div class="text-[13px] font-medium">¿Cuánto cuesta no tener web medio-alta?</div>
-        <div class="mt-3 text-[14px] leading-[1.6] text-[#5A5754]">Si pierdes 1 cliente al mes porque tu web se ve barata, y tu ticket es $800, son $9.600 al año perdidos por ahorrarte $800 en web.</div>
-        <div class="mt-6 h-[1px] bg-[#E8E2D9]"></div>
-        <div class="mt-6 flex items-center justify-between">
-          <div><div class="font-serif text-[28px] leading-none">Desde $900</div><div class="text-[11px] tracking-[0.2em] uppercase text-[#7A758F]">Proyecto completo</div></div>
-          <a href={waLink} class="h-11 px-5 rounded-full bg-[#0E0E10] text-white text-[13px] grid place-items-center">WhatsApp →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="mx-auto max-w-[1440px] px-6 md:px-10 py-20 border-t border-[#E8E2D9]">
-    <div class="grid md:grid-cols-[0.8fr_1.2fr] gap-12">
-      <h3 data-reveal class="font-serif text-[36px] md:text-[48px] leading-[0.9] tracking-[-0.03em]">Preguntas frecuentes</h3>
-      <div data-reveal class="divide-y divide-[#E8E2D9] border-y border-[#E8E2D9]">
-        {[
-          {q:"¿Solo haces landings? Vi VendeT que es gigante", a:"Exacto, por eso VendeT Inmuebles y Marketplace VZLA están arriba. Son marketplaces completos con Supabase, S3, chat Realtime, auth, admin, PWA. Si puedo con eso, una landing premium es la parte fácil. Ofrezco desde $900 landing hasta $5k+ plataforma."},
-          {q:"¿Usas WordPress?", a:"No. Uso Astro / Next.js como en ReformaT, VendeT y Majestic. 3x más rápido, sin plugins que se rompen. VendeT demuestra que puedo manejar DB compleja, storage y realtime sin WordPress."},
-          {q:"¿El código es mío? Vi que entregas repos", a:"Sí. Como en todos tus repos públicos: te entrego repo privado en GitHub con schema documentado (DB_SCHEMA_COMPLETE.md como en VendeT). Tu proyecto no queda atado a mí."},
-          {q:"¿Cuánto tarda una web vs una plataforma?", a:"Landing boutique: 2-3 semanas. Plataforma tipo VendeT Inmuebles: 2-4 meses por fases (MVP catálogo → auth → chat → pagos). La web boutique genera clientes mientras construimos lo grande si lo necesitas."},
-          {q:"¿Trabajas con Venezuela y España?", a:"Sí. VendeT está pensado para Venezuela con tasa BCV y municipios. ReformaT Houston para US. Sé adaptar SEO local, moneda y UX según mercado."},
-        ].map(f=>(
-          <details class="group py-6 cursor-pointer">
-            <summary class="list-none flex justify-between gap-6 text-[16px] font-medium">{f.q}<span class="shrink-0 w-6 h-6 rounded-full border border-[#E8E2D9] grid place-items-center group-open:rotate-45 transition">+</span></summary>
-            <div class="mt-3 text-[14px] leading-[1.6] text-[#5A5754] pr-8">{f.a}</div>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="bg-[#FFFEFB] pb-4">
-    <div class="mx-auto max-w-[1440px] px-6 md:px-10 py-6 md:py-10">
-      <div data-reveal class="rounded-[32px] bg-[#F5F2ED] border border-[#E8E2D9] p-8 md:p-16 text-center relative overflow-hidden">
-        <div class="absolute -top-[30%] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full blur-[80px] opacity-40 bg-gradient-to-br from-white via-[#FFE9D3] to-[#E6D9FF] pointer-events-none"></div>
-        <div class="relative">
-          <div class="inline-flex px-3 py-1 rounded-full bg-white border border-[#E8E2D9] text-[11px] tracking-[0.2em] uppercase">¿Listo para verte del nivel que cobras?</div>
-          <h2 class="mt-8 font-serif text-[40px] md:text-[72px] leading-[0.88] tracking-[-0.04em]">Solicita valoración<br/>gratuita por <span class="italic">WhatsApp</span></h2>
-          <p class="mt-6 mx-auto max-w-[560px] text-[16px] leading-[1.6] text-[#5A5754]">Te digo en 10 minutos si necesitas web nueva, re-diseño o nada. Sin pitch agresivo. Como hago con obras: diagnóstico honesto primero.</p>
-          <div class="mt-10 flex flex-wrap justify-center gap-3">
-            <a href={waLink} class="h-[52px] px-8 rounded-full bg-[#0E0E10] text-white text-[15px] font-medium inline-flex items-center gap-2 hover:shadow-xl hover:shadow-black/20 transition">Escribir por WhatsApp ahora →</a>
-            <div class="h-[52px] px-6 rounded-full bg-white border border-[#E8E2D9] text-[13px] text-[#5A5754] grid place-items-center">Respuesta &lt; 2h · Lun-Sáb</div>
+      <div class="grid md:grid-cols-2 gap-10 text-[14.5px] leading-[1.7] text-[#3A3835]">
+        <div class="space-y-10">
+          <div>
+            <div class="font-mono text-[10px] tracking-[0.22em] uppercase text-[#9A958E]">01 — Congruencia</div>
+            <div class="mt-3 font-medium text-[#0A0A0B] text-[17px] leading-[1.3]">Tu oficina es premium. Tu web no puede ser outlet.</div>
+            <div class="mt-3 font-light">Inversión en local, personal, materiales. Luego web con fotos pixeladas, stock barato, tipografía Arial. El cerebro del cliente premium detecta incongruencia y se va.</div>
           </div>
-          <div class="mt-10 text-[11px] tracking-[0.18em] uppercase text-[#7A758F]">VendeT Inmuebles · Marketplace VZLA · ReformaT · Presupuestos Python · 30+ negocios · Supabase + PWA</div>
+          <div>
+            <div class="font-mono text-[10px] tracking-[0.22em] uppercase text-[#9A958E]">02 — Performance como señal de respeto</div>
+            <div class="mt-3 font-medium text-[#0A0A0B] text-[17px] leading-[1.3]">Web lenta = no te importa el tiempo de tu cliente.</div>
+            <div class="mt-3 font-light">ReformaT carga en 0.9s, 98 Lighthouse, imágenes webp 48KB vs 910KB PNG. No es vanidad técnica. Es respeto.</div>
+          </div>
+        </div>
+        <div class="space-y-10">
+          <div>
+            <div class="font-mono text-[10px] tracking-[0.22em] uppercase text-[#9A958E]">03 — SEO local real, no trucos</div>
+            <div class="mt-3 font-medium text-[#0A0A0B] text-[17px] leading-[1.3]">Aparecer cuando buscan “clínica estética San Diego” no es suerte.</div>
+            <div class="mt-3 font-light">80+ landings programáticas por zona, sitemap con prioridades Carabobo > Caracas, IndexNow, Schema, OG images. Eso es ReformaT. No Yoast.</div>
+          </div>
+          <div class="rounded-[20px] bg-[#0A0A0B] text-white p-6">
+            <div class="font-mono text-[10px] tracking-[0.2em] uppercase text-white/50">Coste de no hacerlo</div>
+            <div class="mt-3 font-serif text-[22px] leading-[1.1]">Si pierdes 1 cliente/mes por web genérica y tu ticket es $900, son $10.800/año por ahorrar $600.</div>
+            <div class="mt-4 text-[12px] text-white/60 leading-[1.5]">Y eso sin contar posicionamiento perdido en Google durante 12 meses.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="mx-auto max-w-[1440px] px-6 md:px-10 py-10 flex flex-wrap justify-between gap-6 text-[12px] text-[#7A758F] border-t border-[#E8E2D9] mt-4">
-    <div>© 2026 Diseño Web Boutique. De <a href="https://github.com/gtrespana-bit/vendet-inmuebles" class="underline">VendeT (Next.js+Supabase+S3)</a> a <a href="https://github.com/gtrespana-bit/reformat-venezuela" class="underline">ReformaT (Astro SEO 98)</a>. Hecho en Astro.</div>
-    <div class="flex gap-6"><a href={waLink} class="hover:text-[#0E0E10]">WhatsApp</a><span>San Diego, Carabobo — VE / Lanzarote — ES</span></div>
+  <!-- CAPACIDAD TÉCNICA — BENTO PREMIUM -->
+  <section id="capacidad" class="bg-[#0A0A0B] text-[#FFFEFB] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.06]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 48px 48px"></div>
+    <div class="relative mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32">
+      <div class="flex flex-wrap justify-between gap-8 items-end">
+        <div>
+          <div class="font-mono text-[11px] tracking-[0.28em] uppercase text-white/40">Capacidad técnica — de landing 98 a marketplace con 13 tablas</div>
+          <h2 class="mt-6 font-serif text-[42px] md:text-[72px] leading-[0.85] tracking-[-0.05em] max-w-[720px]">No solo hacemos webs.<br/>Arquitectamos sistemas<br/>que soportan operación.</h2>
+        </div>
+        <div class="max-w-[360px] text-[13.5px] leading-[1.6] text-white/50 font-light">Todo el código expuesto abajo es de tus repos públicos. No es mockup. Es producción. Si puedo manejar RLS, S3 signed URLs y Realtime, puedo con tu web boutique con los ojos cerrados.</div>
+      </div>
+
+      <div class="mt-16 grid lg:grid-cols-[1.15fr_0.85fr] gap-6">
+        <!-- LEFT LARGE CODE -->
+        <div class="rounded-[28px] bg-[#151517] border border-white/[0.08] overflow-hidden">
+          <div class="h-[48px] flex items-center justify-between px-6 border-b border-white/10">
+            <div class="flex items-center gap-3"><div class="w-3 h-3 rounded-full bg-white/10"></div><div class="font-mono text-[11px] tracking-[0.2em] uppercase text-white/40">vendet-inmuebles / src/lib/categorias.ts · DB_SCHEMA_COMPLETE.md</div></div>
+            <div class="hidden md:flex items-center gap-2 font-mono text-[10px] text-white/30"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Supabase RLS ACTIVE · 13 TABLES</div>
+          </div>
+          <div class="grid md:grid-cols-[1.1fr_0.9fr] gap-0">
+            <div class="p-6 md:p-8 font-mono text-[11.5px] leading-[1.7] text-white/70 overflow-x-auto">
+<pre class="whitespace-pre-wrap"><span class="text-white/30">// VendeT Inmuebles — schema real</span>
+<span class="text-[#C9A84C]">TABLE</span> inmuebles &#123;
+  id uuid PK
+  usuario_id → perfiles.id
+  titulo varchar
+  operacion_id → operaciones.id
+  tipo_id → tipos_inmueble.id
+  precio numeric · moneda USD
+  area_total · habitaciones · banos
+  activo bool · visitas int
+  slug text UNIQUE
+&#125;
+
+<span class="text-[#C9A84C]">VIEW</span> vw_propiedades_publicas AS
+  SELECT i.*,
+    o.nombre AS operacion_nombre,
+    t.nombre AS tipo_nombre,
+    pi.url_imagen AS main_image_url
+  FROM inmuebles i
+  LEFT JOIN operaciones o ON i.operacion_id=o.id
+  LEFT JOIN tipos_inmueble t ON i.tipo_id=t.id
+  LEFT JOIN inmueble_imagenes pi
+    ON pi.inmueble_id=i.id AND pi.es_portada=true
+
+<span class="text-white/30">// Marketplace categorias.ts — 8 cats, campos dinámicos</span>
+<span class="text-[#C9A84C]">const</span> campoAnio = &#123; label: 'Año', type: 'select' &#125;
+<span class="text-[#C9A84C]">categoriasData</span>.vehiculos.subs[0].marcas = 
+  ['Toyota','Ford','BMW'...22 marcas]
+</pre>
+            </div>
+            <div class="border-t md:border-t-0 md:border-l border-white/10 p-6 md:p-8 bg-[#0F0F11]">
+              <div class="font-mono text-[10px] tracking-[0.22em] uppercase text-white/40">Stack en producción</div>
+              <div class="mt-6 space-y-5">
+                <div class="flex justify-between text-[12px]"><span class="text-white/50 font-mono">Next.js</span><span class="text-white">14 App Router</span></div>
+                <div class="flex justify-between text-[12px]"><span class="text-white/50 font-mono">Supabase</span><span class="text-white">SSR + Auth + Realtime + Storage</span></div>
+                <div class="flex justify-between text-[12px]"><span class="text-white/50 font-mono">Storage</span><span class="text-white">S3 AWS SDK + Sharp 48KB</span></div>
+                <div class="flex justify-between text-[12px]"><span class="text-white/50 font-mono">PWA</span><span class="text-white">offline + push + TTL 7d</span></div>
+                <div class="flex justify-between text-[12px]"><span class="text-white/50 font-mono">Obs</span><span class="text-white">Sentry + Analytics + Speed Insights</span></div>
+                <div class="h-[1px] bg-white/10"></div>
+                <div class="text-[11px] leading-[1.5] text-white/40 font-mono">37 rutas · middleware + i18n next-intl · rate-limit · moderación automática · tasa BCV · email + telegram webhook</div>
+              </div>
+              <div class="mt-8 flex gap-2">
+                <a href="https://github.com/gtrespana-bit/vendet-inmuebles" target="_blank" class="h-9 px-4 rounded-full bg-white text-black text-[11px] font-medium grid place-items-center">Ver schema DB →</a>
+                <a href="https://github.com/gtrespana-bit/Marketplace-vzla" target="_blank" class="h-9 px-4 rounded-full bg-white/10 border border-white/15 text-white text-[11px] grid place-items-center">Ver Marketplace →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT BENTO -->
+        <div class="grid gap-6">
+          <div class="rounded-[28px] bg-[#F8F5F0] text-[#0A0A0B] p-8 border border-[#EDE8E1]">
+            <div class="font-mono text-[10px] tracking-[0.24em] uppercase text-[#9A958E]">ReformaT Venezuela · SEO 98</div>
+            <div class="mt-4 font-serif text-[28px] leading-[0.9] tracking-[-0.03em]">80+ landings programáticas que generan leads mientras duermes.</div>
+            <div class="mt-4 text-[13px] leading-[1.6] text-[#5A5753]">Sitemap con prioridades: PRIMARY_CARABOBO (San Diego, El Trigal, Guataparo...) 0.95 > resto 0.4. Scripts check-images, IndexNow, inject-image-dimensions. No plugin WordPress.</div>
+            <div class="mt-6 flex flex-wrap gap-2 font-mono text-[10px]"><span class="px-2.5 py-1 rounded-full bg-[#0A0A0B] text-white">astro 5</span><span class="px-2.5 py-1 rounded-full border border-[#0A0A0B]/10">IndexNow</span><span class="px-2.5 py-1 rounded-full border border-[#0A0A0B]/10">PWA</span></div>
+          </div>
+          <div class="rounded-[28px] bg-[#C9A84C] text-black p-8">
+            <div class="font-mono text-[10px] tracking-[0.24em] uppercase opacity-60">Presupuestos · Python Desktop App</div>
+            <div class="mt-4 font-serif text-[24px] leading-[0.95] tracking-[-0.02em]">No solo web. Software con PDF ReportLab, firma digital y import CYPE.</div>
+            <div class="mt-3 text-[12.5px] leading-[1.5] opacity-80">Plantillas, backups ZIP, facturas F-, instalación Inno Setup. Demuestra que si la lógica se complica, no me bloqueo.</div>
+            <div class="mt-5 font-mono text-[11px]">→ github.com/gtrespana-bit/presupuestos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS SELECTED — EDITORIAL GRID -->
+  <section id="proyectos" class="bg-[#FFFEFB]">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-28">
+      <div class="flex flex-wrap items-end justify-between gap-8 border-b border-[#EDE8E1] pb-10">
+        <h2 class="font-serif text-[40px] md:text-[64px] leading-[0.85] tracking-[-0.05em]">Proyectos seleccionados<br/><span class="italic font-light">— producción, no mockups</span></h2>
+        <div class="max-w-[340px] text-[13px] leading-[1.6] text-[#6B6760]">Cada proyecto abajo es repo público con código, schema y deploy. Haz clic y revisa el código. Nivel medio-alto se demuestra con DB, no con Dribbble.</div>
+      </div>
+
+      <div class="mt-12 grid lg:grid-cols-12 gap-[1px] bg-[#EDE8E1] border border-[#EDE8E1] rounded-[24px] overflow-hidden">
+        <!-- VendeT large -->
+        <a href="https://github.com/gtrespana-bit/vendet-inmuebles" target="_blank" class="lg:col-span-7 group bg-[#FFFEFB] p-8 md:p-10 relative overflow-hidden">
+          <div class="flex justify-between items-start">
+            <div class="font-mono text-[10px] tracking-[0.22em] uppercase px-2.5 py-1 rounded-full bg-[#0A0A0B] text-white">Proyecto enorme · Inmobiliaria</div>
+            <div class="font-mono text-[10px] text-[#9A958E]">2025-26 · Next.js 14 · Supabase · S3</div>
+          </div>
+          <div class="mt-10 font-serif text-[36px] md:text-[48px] leading-[0.9] tracking-[-0.04em]">VendeT Inmuebles</div>
+          <div class="mt-4 text-[14.5px] leading-[1.6] text-[#5A5753] max-w-[56ch]">Marketplace inmobiliario completo. De publicar inmueble con S3 + Sharp a chat Realtime entre comprador y agente, admin moderación, destacados pagados, suscripciones, auditoría. <span class="text-[#0A0A0B] font-medium">Schema real con 13 tablas y vista vw_propiedades_publicas.</span></div>
+          <div class="mt-8 aspect-[16/9] rounded-[16px] overflow-hidden bg-[#F8F5F0] border border-[#EDE8E1] relative">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition duration-[1.2s]" alt="" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#FFFEFB] via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex gap-2 font-mono text-[10px]"><span class="px-2.5 py-1 rounded-full bg-[#0A0A0B] text-white">inmuebles + imagenes + caracteristicas</span><span class="px-2.5 py-1 rounded-full bg-white border">S3 signed URL</span></div>
+          </div>
+          <div class="mt-6 flex gap-2 font-mono text-[10px] text-[#9A958E]"><span>37 rutas</span><span>·</span><span>next-intl</span><span>·</span><span>Sentry</span><span>·</span><span>PWA Push</span></div>
+        </a>
+        <!-- Marketplace -->
+        <a href="https://github.com/gtrespana-bit/Marketplace-vzla" target="_blank" class="lg:col-span-5 group bg-[#0A0A0B] text-[#FFFEFB] p-8 md:p-10">
+          <div class="flex justify-between"><div class="font-mono text-[10px] tracking-[0.22em] uppercase px-2.5 py-1 rounded-full bg-[#C9A84C] text-black font-semibold">Marketplace General VZLA</div><div class="font-mono text-[10px] text-white/40">2025</div></div>
+          <div class="mt-10 font-serif text-[32px] leading-[0.9]">Marketplace VZLA</div>
+          <div class="mt-4 text-[13.5px] leading-[1.6] text-white/60">Vehículos, tecnología, hogar. Catálogo con filtros por marca/modelo/año/estado, chat Realtime, sistema créditos, verificación, reputación, favoritos, tasa BCV, moderación automática. Deploy vendet.online</div>
+          <div class="mt-8 rounded-[16px] bg-white/[0.06] border border-white/10 p-4 font-mono text-[11px] leading-[1.6] text-white/70">
+            categoriasData.vehiculos.subs = [Carros: 22 marcas, Camionetas: tracción 4x2/4x4/AWD, Motos: cilindraje + tipo]<br/>
+            + push.ts + rate-limit.ts + moderacion.ts + ubicaciones.ts (Estados/Municipios VE)
+          </div>
+          <div class="mt-8 inline-flex border-b border-white/20 pb-1 text-[12px]">Ver PROJECT.md completo →</div>
+        </a>
+
+        <!-- ReformaT -->
+        <a href="https://github.com/gtrespana-bit/reformat-venezuela" target="_blank" class="lg:col-span-5 bg-white p-8 md:p-10 group">
+          <div class="font-mono text-[10px] tracking-[0.22em] uppercase text-[#9A958E]">ReformaT Venezuela · Astro SEO 98 · Lead Gen</div>
+          <div class="mt-6 font-serif text-[28px] leading-[0.9]">ReformaT Venezuela</div>
+          <div class="mt-3 text-[13.5px] leading-[1.6] text-[#5A5753]">Sistema SEO programático: 80+ landings por zona con prioridades por Carabobo. Scripts check-images, IndexNow. Performance 98. Genera leads orgánicos diarios para ticket $2k+.</div>
+          <div class="mt-6 grid grid-cols-3 gap-2 font-mono text-[10px]"><div class="h-16 rounded-[12px] bg-[#F8F5F0] border p-2"><div class="text-[#9A958E]">Sitemap</div><div class="font-semibold">0.95 San Diego</div></div><div class="h-16 rounded-[12px] bg-[#0A0A0B] text-white p-2"><div class="opacity-60">Landings</div><div>80+ zonas</div></div><div class="h-16 rounded-[12px] bg-[#EDE8E1] p-2"><div>Lighthouse</div><div class="font-semibold">98</div></div></div>
+        </a>
+        <!-- Presupuestos + Majestic -->
+        <div class="lg:col-span-7 grid md:grid-cols-2 gap-[1px] bg-[#EDE8E1]">
+          <a href="https://github.com/gtrespana-bit/presupuestos" target="_blank" class="bg-[#F8F5F0] p-8 group">
+            <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[#9A958E]">Python Desktop App · PDF Engine</div>
+            <div class="mt-4 font-serif text-[22px] leading-[0.9]">Presupuestos</div>
+            <div class="mt-3 text-[12.5px] leading-[1.6] text-[#5A5753]">App de escritorio con catálogo, CYPE import, firma digital, PDF ReportLab idéntico a doc referencia. Facturas, backup ZIP, instalador.</div>
+            <div class="mt-6 font-mono text-[10px] px-2.5 py-1 rounded-full bg-[#0A0A0B] text-white inline-flex">Python + ReportLab + pywebview</div>
+          </a>
+          <a href="https://github.com/gtrespana-bit/Majestic" target="_blank" class="bg-white p-8 group">
+            <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[#9A958E]">Majestic Web Studio · Visual Premium</div>
+            <div class="mt-4 font-serif text-[22px] leading-[0.9]">Majestic Studio</div>
+            <div class="mt-3 text-[12.5px] leading-[1.6] text-[#5A5753]">Next.js 14 + Spline 3D + Framer Motion + magnetic UI. Concepto boutique caro para marca que quiere wow tech.</div>
+            <div class="mt-6 font-mono text-[10px] px-2.5 py-1 rounded-full border inline-flex">Spline 3D · HoloCard · GradientBorder</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section id="metodo" class="bg-[#F8F5F0] border-y border-[#EDE8E1]">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32">
+      <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-16">
+        <div class="sticky top-[120px] h-fit">
+          <div class="font-mono text-[11px] tracking-[0.3em] uppercase text-[#9A958E]">Método — cómo trabajo</div>
+          <h2 class="mt-6 font-serif text-[42px] md:text-[56px] leading-[0.85] tracking-[-0.04em]">Sin humo.<br/>Con proceso de obra<br/>bien hecha.</h2>
+          <div class="mt-8 text-[13.5px] leading-[1.7] text-[#5A5753] max-w-[36ch]">Como en ReformaT: primero diagnóstico, luego especificación de materiales correctos, luego ejecución supervisada. No vendemos humo. Entregamos repo.</div>
+          <div class="mt-10 rounded-[16px] bg-white border border-[#EDE8E1] p-4 flex gap-3 items-center">
+            <img src="https://i.pravatar.cc/100?img=12" class="w-9 h-9 rounded-full" />
+            <div class="text-[12px] leading-[1.4]"><div class="font-medium">“Presupuesto por partidas, checklist y garantía escrita. Como una obra bien hecha.”</div><div class="text-[#9A958E]">Cliente ReformaT — patrón que replicamos en web</div></div>
+          </div>
+        </div>
+        <div class="space-y-0 divide-y divide-[#EDE8E1] border-y border-[#EDE8E1]">
+          <div class="py-10 grid md:grid-cols-[80px_1fr] gap-6">
+            <div class="font-serif text-[48px] leading-none opacity-20">01</div>
+            <div><div class="font-medium text-[18px]">Diagnóstico honesto (gratis)</div><div class="mt-3 text-[14px] leading-[1.7] text-[#5A5753]">Audito tu web actual, competencia local en San Diego/Valencia/El Trigal y cliente ideal. Te digo si necesitas web nueva, re-diseño o nada. He rechazado proyectos que no necesitan web.</div><div class="mt-4 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9A958E]">Entregable: Loom 10min + Notion con gaps</div></div>
+          </div>
+          <div class="py-10 grid md:grid-cols-[80px_1fr] gap-6">
+            <div class="font-serif text-[48px] leading-none opacity-20">02</div>
+            <div><div class="font-medium text-[18px]">Dirección de arte & arquitectura</div><div class="mt-3 text-[14px] leading-[1.7] text-[#5A5753]">Moodboard, tipografías (Instrument Serif + Geist), paleta, sistema de fotos. Definimos si tu negocio debe verse boutique clínico, inmobiliario de lujo o técnico de reforma. Arquitectura de información + SEO local.</div></div>
+          </div>
+          <div class="py-10 grid md:grid-cols-[80px_1fr] gap-6">
+            <div class="font-serif text-[48px] leading-none opacity-20">03</div>
+            <div><div class="font-medium text-[18px]">Build — Astro / Next.js + Supabase si escalamos</div><div class="mt-3 text-[14px] leading-[1.7] text-[#5A5753]">Figma → código limpio. Optimización webp 48KB, sitemap con prioridades, Schema, OG, Search Console, IndexNow, WhatsApp conversion tracking, analytics. Si necesitas plataforma, misma base que VendeT: S3, auth, RLS, PWA.</div></div>
+          </div>
+          <div class="py-10 grid md:grid-cols-[80px_1fr] gap-6">
+            <div class="font-serif text-[48px] leading-none opacity-20">04</div>
+            <div><div class="font-medium text-[18px]">Lanzamiento & medición</div><div class="mt-3 text-[14px] leading-[1.7] text-[#5A5753]">Deploy Vercel, Search Console, verificación IndexNow, sitemap.xml, robots, PWA. Tu web empieza a medir consultas, no visitas. Te entrego repo privado + Loom de mantenimiento.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTUDIO / SERVICIOS PREMIUM -->
+  <section id="estudio" class="bg-[#FFFEFB] py-20 md:py-28">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10">
+      <div class="flex flex-wrap justify-between items-end gap-8">
+        <h2 class="font-serif text-[38px] md:text-[60px] leading-[0.85] tracking-[-0.05em]">Estudio boutique.<br/><span class="italic font-light">Dos plazas por trimestre.</span></h2>
+        <div class="max-w-[340px] text-[13.5px] leading-[1.6] text-[#6B6760]">No somos agencia de volumen. Tomamos 2 proyectos por trimestre para mantener estándar europeo. Si buscas entrega en 3 días por $250, hay 1000 opciones en Fiverr.</div>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-12 gap-[1px] bg-[#EDE8E1] border border-[#EDE8E1] rounded-[24px] overflow-hidden">
+        <div class="lg:col-span-8 bg-white p-8 md:p-10 grid md:grid-cols-2 gap-10">
+          <div>
+            <div class="w-8 h-8 rounded-full bg-[#0A0A0B] text-white grid place-items-center font-mono text-[11px]">01</div>
+            <div class="mt-6 font-serif text-[22px] leading-[0.95]">Web boutique de alto rendimiento</div>
+            <div class="mt-3 text-[13px] leading-[1.6] text-[#5A5753]">Para clínicas, inmobiliarias, reformas que facturan 5k+/mes y necesitan verse de $20k. Misma arquitectura que ReformaT (98 Lighthouse). Diseño desde cero, no plantilla.</div>
+            <div class="mt-6 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9A958E]">Desde $1.200 · 2-3 semanas · Astro + Tailwind + SEO</div>
+          </div>
+          <div>
+            <div class="w-8 h-8 rounded-full bg-[#C9A84C] text-black grid place-items-center font-mono text-[11px]">02</div>
+            <div class="mt-6 font-serif text-[22px] leading-[0.95]">Plataformas y marketplaces</div>
+            <div class="mt-3 text-[13px] leading-[1.6] text-[#5A5753]">VendeT demuestra que puedo con sistema completo: catálogo, S3 upload con Sharp, auth Supabase SSR, chat Realtime, admin, pagos, PWA offline, Sentry. Para inmobiliarias que quieren su propio portal.</div>
+            <div class="mt-6 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9A958E]">Desde $5k · Fases 2-4 meses · Next.js + Supabase + S3</div>
+          </div>
+        </div>
+        <div class="lg:col-span-4 bg-[#0A0A0B] text-white p-8 md:p-10 flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-[10px] tracking-[0.24em] uppercase text-white/40">Filtro honesto</div>
+            <div class="mt-6 font-serif text-[24px] leading-[1]">No trabajo con todo el mundo. Ese es el punto.</div>
+            <div class="mt-6 space-y-3 text-[13px] leading-[1.5] text-white/60">
+              <div class="flex gap-2"><span class="text-white">✓</span> Negocio con local físico y ticket $500+ que sabe que cliente paga por confianza</div>
+              <div class="flex gap-2"><span class="text-white">✓</span> Valora diseño sobrio, rápido, que aparezca en Google, no efectos que marean</div>
+              <div class="flex gap-2"><span class="text-white/40">✕</span> Si buscas $200 en 2 días, no soy tu opción</div>
+            </div>
+          </div>
+          <div class="mt-10 rounded-[16px] bg-white text-black p-5">
+            <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-[#9A958E]">Coste de no hacerlo</div>
+            <div class="mt-3 text-[13px] leading-[1.5]">Pierdes 1 cliente/mes por web genérica × $900 = $10.8k/año perdidos por ahorrar $700.</div>
+            <a href={waLink} class="mt-4 h-9 rounded-full bg-black text-white text-[11px] font-medium grid place-items-center">Calcular mi pérdida →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ PREMIUM -->
+  <section class="mx-auto max-w-[1600px] px-6 md:px-10 py-20 border-t border-[#EDE8E1] grid lg:grid-cols-[0.7fr_1.3fr] gap-12">
+    <h3 class="font-serif text-[36px] md:text-[48px] leading-[0.85] tracking-[-0.04em] sticky top-[100px] h-fit">Preguntas<br/><span class="italic font-light">frecuentes</span></h3>
+    <div class="divide-y divide-[#EDE8E1] border-y border-[#EDE8E1]">
+      <details class="group py-7">
+        <summary class="list-none flex justify-between gap-8 cursor-pointer"><span class="font-medium text-[15px] max-w-[42ch]">Vi VendeT y Marketplace, son enormes. ¿Solo haces landings o también plataformas?</span><span class="w-8 h-8 rounded-full border border-[#EDE8E1] grid place-items-center group-open:rotate-45 transition">+</span></summary>
+        <div class="mt-4 max-w-[60ch] text-[13.5px] leading-[1.7] text-[#5A5753]">Las dos. VendeT Inmuebles y Marketplace VZLA (Next.js 14 + Supabase SSR + S3 + Realtime + PWA + Sentry + 13 tablas) demuestran que puedo con sistemas complejos. Una landing boutique de $1.200 con 98 Lighthouse es la parte fácil. Ofrezco desde landing (2-3 semanas) hasta marketplace por fases (2-4 meses).</div>
+      </details>
+      <details class="group py-7">
+        <summary class="list-none flex justify-between gap-8 cursor-pointer"><span class="font-medium text-[15px] max-w-[42ch]">¿WordPress? ¿Por qué Astro / Next.js?</span><span class="w-8 h-8 rounded-full border border-[#EDE8E1] grid place-items-center group-open:rotate-45 transition">+</span></summary>
+        <div class="mt-4 max-w-[60ch] text-[13.5px] leading-[1.7] text-[#5A5753]">No uso WordPress. ReformaT y VendeT usan Astro / Next.js: 3x más rápido, sin plugins que se rompen, sin mantenimiento, 98 Lighthouse, sitemap con prioridades, IndexNow, PWA offline. Para plataforma necesito Supabase RLS + S3 + Sharp, imposible en WP sin sufrir.</div>
+      </details>
+      <details class="group py-7">
+        <summary class="list-none flex justify-between gap-8 cursor-pointer"><span class="font-medium text-[15px] max-w-[42ch]">¿El código es mío? ¿Cómo entregas?</span><span class="w-8 h-8 rounded-full border border-[#EDE8E1] grid place-items-center group-open:rotate-45 transition">+</span></summary>
+        <div class="mt-4 max-w-[60ch] text-[13.5px] leading-[1.7] text-[#5A5753]">Repo privado en GitHub como haces tú: con DB_SCHEMA_COMPLETE.md, PROJECT.md, migraciones SQL, .env.example, README con runbook. Como en VendeT y ReformaT. Tu proyecto no queda atado a mí. Deploy Vercel auto.</div>
+      </details>
+      <details class="group py-7">
+        <summary class="list-none flex justify-between gap-8 cursor-pointer"><span class="font-medium text-[15px] max-w-[42ch]">¿Cuánto tarda y cuánto cuesta no tener web premium?</span><span class="w-8 h-8 rounded-full border border-[#EDE8E1] grid place-items-center group-open:rotate-45 transition">+</span></summary>
+        <div class="mt-4 max-w-[60ch] text-[13.5px] leading-[1.7] text-[#5A5753]">Landing boutique 2-3 semanas $1.200+. Plataforma inmobiliaria tipo VendeT desde $5k por fases. Si tu ticket es $900 y pierdes 1 cliente/mes por web genérica, son $10.800/año perdidos. La web se paga sola en 1 cliente.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA FINAL PREMIUM -->
+  <section class="bg-[#0A0A0B] text-[#FFFEFB] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.08]" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 24px 24px"></div>
+    <div class="relative mx-auto max-w-[1600px] px-6 md:px-10 py-20 md:py-32 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 font-mono text-[10px] tracking-[0.22em] uppercase"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Auditoría gratuita — 10min Loom — sin pitch agresivo</div>
+      <h2 class="mt-10 font-serif text-[48px] md:text-[88px] leading-[0.82] tracking-[-0.06em] mx-auto max-w-[14ch]">¿Tu web transmite<br/><span class="italic font-light">el nivel que cobras?</span></h2>
+      <p class="mt-8 max-w-[56ch] mx-auto text-[15px] leading-[1.7] text-white/60">Te digo en 10 minutos si necesitas web nueva, re-diseño o nada. Como hago con obras: diagnóstico honesto primero. Si encajamos, 2 plazas este trimestre.</p>
+      <div class="mt-12 flex flex-wrap justify-center gap-3">
+        <a href={waLink} class="h-[56px] px-8 rounded-full bg-white text-black inline-flex items-center gap-3 text-[13.5px] font-medium hover:bg-[#F5F1EB] transition">Solicitar auditoría por WhatsApp →</a>
+        <div class="h-[56px] px-6 rounded-full bg-white/10 border border-white/15 text-white/60 inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase"><span class="w-1.5 h-1.5 rounded-full bg-white/40"></span> San Diego · Lanzarote · Response &lt;2h</div>
+      </div>
+      <div class="mt-16 font-mono text-[10px] tracking-[0.22em] uppercase text-white/30">VendeT Inmuebles — Marketplace VZLA — ReformaT Venezuela — Presupuestos Python — 30+ negocios locales — Supabase + S3 + PWA + Sentry · Hecho con Astro</div>
+    </div>
+  </section>
+
+  <footer class="bg-[#FFFEFB] border-t border-[#EDE8E1] py-8">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 flex flex-wrap justify-between gap-4 text-[11px] font-mono tracking-[0.08em] text-[#9A958E]">
+      <div>© 2026 Diseño Web Boutique · De marketplace con 13 tablas RLS a landing 98 Lighthouse · <a class="underline" href="https://github.com/gtrespana-bit/vendet-inmuebles">VendeT</a> / <a class="underline" href="https://github.com/gtrespana-bit/reformat-venezuela">ReformaT</a></div>
+      <div>VE / ES — Astro</div>
+    </div>
   </footer>
 
 </Base>
