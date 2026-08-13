@@ -1,371 +1,308 @@
 ---
 import Base from '../layouts/Base.astro';
-const wa = encodeURIComponent('Hola. He visto VendeT y ReformaT. Somos una empresa que factura y buscamos una web / plataforma a nivel premium. Quisiera una auditoría para ver encaje.');
+const wa = encodeURIComponent('Hola, vengo de su web estudio boutique. Quisiera una auditoría privada para valorar encaje. Empresa:');
 const waLink = `https://wa.me/584000000000?text=${wa}`;
 ---
 
-<Base title="Estudio — Diseño Web y Plataformas para Negocios Premium" description="Estudio boutique para negocios que compiten por confianza, no por precio. Webs de alto rendimiento y marketplaces completos. VendeT: Next.js + Supabase + S3 + Realtime. ReformaT: 80+ landings SEO 98.">
+<Base title="Estudio — Diseño Web y Plataformas para Negocios Premium" description="Estudio boutique en Venezuela y España. Webs que transmiten nivel premium y plataformas que escalan operación. VendeT Inmuebles y ReformaT en producción.">
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap');
-  .font-display { font-family: "Cormorant Garamond", "Instrument Serif", serif; }
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap');
+  .font-display { font-family: "Cormorant Garamond", serif; }
   .font-serif2 { font-family: "Instrument Serif", serif; }
-  ::selection { background: #0A0A0A; color: #FFFEFB; }
+  .font-sans2 { font-family: "Inter", sans-serif; }
 </style>
 
-<div class="bg-[#FBF8F3] text-[#0E0E0E] antialiased selection:bg-black selection:text-white">
+<div class="bg-[#FDFCF9] text-[#121212] font-sans2 antialiased">
 
-  <!-- HEADER MINIMAL LUXURY -->
-  <header class="fixed top-0 left-0 right-0 z-50 mix-blend-normal">
-    <div class="mx-auto max-w-[1720px] px-6 md:px-12 h-[80px] flex items-center justify-between">
-      <a href="#" class="group flex items-center gap-4">
-        <div class="w-[36px] h-[36px] rounded-full bg-black text-white grid place-items-center font-serif2 text-[18px] leading-none pt-[1px]">—</div>
-        <div class="leading-[0.9]">
-          <div class="text-[12px] tracking-[0.22em] font-medium">ESTUDIO</div>
-          <div class="text-[10px] tracking-[0.18em] opacity-50 font-mono mt-[2px]">VE · ES — 2023</div>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-[#FDFCF9]/90 backdrop-blur-xl border-b border-[#EAE4D9]">
+    <div class="mx-auto max-w-[1440px] px-8 md:px-12 h-[72px] flex items-center justify-between">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-[#121212] text-white grid place-items-center font-serif2 text-[18px] leading-none">—</div>
+          <div class="text-[12px] tracking-[0.2em] font-medium">ESTUDIO</div>
         </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-10 text-[11px] tracking-[0.18em] uppercase">
-        <a href="#obra" class="opacity-60 hover:opacity-100 transition">Obra</a>
-        <a href="#capacidad" class="opacity-60 hover:opacity-100 transition">Capacidad</a>
-        <a href="#metodo" class="opacity-60 hover:opacity-100 transition">Método</a>
-        <a href={waLink} class="ml-6 h-[40px] px-6 rounded-full bg-black text-white flex items-center gap-2 hover:bg-[#1A1A1A] transition">
-          <span class="w-1 h-1 rounded-full bg-[#D8C5A2]"></span> Auditoría privada
-        </a>
-      </nav>
+        <nav class="hidden md:flex items-center gap-8 text-[11px] tracking-[0.18em] uppercase opacity-60">
+          <a href="#obra" class="hover:opacity-100">Obra</a>
+          <a href="#capacidad" class="hover:opacity-100">Capacidad</a>
+          <a href="#metodo" class="hover:opacity-100">Método</a>
+        </nav>
+      </div>
+      <a href={waLink} class="h-9 px-5 rounded-full bg-[#121212] text-white text-[12px] tracking-[0.06em] inline-flex items-center hover:bg-black transition">Auditoría privada</a>
     </div>
   </header>
 
-  <!-- HERO QUIET LUXURY -->
-  <section class="relative min-h-[92vh] flex items-end md:items-center pt-[120px] pb-16 md:pb-0 overflow-hidden">
-    <!-- background image luxury interior -->
-    <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2000&q=80&auto=format" alt="" class="absolute inset-0 w-full h-full object-cover opacity-[0.12]" />
-      <div class="absolute inset-0 bg-gradient-to-b from-[#FBF8F3] via-[#FBF8F3]/80 to-[#FBF8F3]"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FBF8F3] via-transparent to-[#FBF8F3]/60"></div>
-    </div>
-
-    <div class="relative w-full mx-auto max-w-[1720px] px-6 md:px-12 grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-end md:items-center">
-      <div>
-        <div class="inline-flex items-center gap-3 border border-black/10 rounded-full px-4 h-8 bg-white/60 backdrop-blur">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-          <span class="text-[10px] tracking-[0.2em] uppercase font-mono">Disponible Q2 2026 — 2 plazas — Boutique</span>
+  <!-- HERO -->
+  <section class="mx-auto max-w-[1440px] px-8 md:px-12 pt-16 md:pt-28 pb-20 md:pb-28">
+    <div class="grid lg:grid-cols-12 gap-12 md:gap-16">
+      <!-- left 7 cols -->
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase font-mono border border-[#EAE4D9] rounded-full px-3 h-7 bg-white">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Disponible — 2 plazas Q2 2026
         </div>
 
-        <h1 class="mt-10 font-display text-[56px] md:text-[108px] leading-[0.85] tracking-[-0.05em] font-light">
-          Tu negocio<br/>
-          <span class="italic font-[300]">factura premium.</span><br/>
-          Tu web debería<br/>
-          cerrar clientes<br/>
-          premium.
+        <h1 class="mt-10 font-display font-light text-[48px] md:text-[84px] leading-[0.9] tracking-[-0.04em]">
+          Diseño web para<br/>
+          negocios que no<br/>
+          <span class="italic font-normal">compiten por precio.</span>
         </h1>
 
-        <div class="mt-10 md:mt-14 grid md:grid-cols-[1.15fr_0.85fr] gap-10 max-w-[760px]">
-          <p class="text-[18px] leading-[1.55] tracking-[-0.01em] font-light text-[#2A2926]">
-            Estudio boutique para clínicas, inmobiliarias y reformas que no compiten por precio. Diseñamos sistemas digitales que transmiten el nivel de tu oficina, tu equipo y tu ticket — y soportan operación real.
-          </p>
-          <p class="text-[13.5px] leading-[1.7] text-[#6F6B65] font-light border-l border-black/10 pl-6">
-            No somos agencia de volumen. Si buscas plantilla de $300 en 72h, no somos tu estudio. Si tu ticket es de $800+ y tu cliente paga por confianza, sí.
-          </p>
+        <p class="mt-10 max-w-[52ch] text-[18px] leading-[1.6] font-light text-[#3A3935]">
+          Estudio boutique en San Diego y Lanzarote para clínicas, inmobiliarias y reformas que facturan premium y no pueden permitirse verse genéricas. Webs de alto rendimiento y plataformas que escalan operación.
+        </p>
+
+        <div class="mt-10 flex gap-3">
+          <a href={waLink} class="h-[48px] px-7 rounded-full bg-[#121212] text-white inline-flex items-center text-[13px] gap-2 hover:bg-black transition">Solicitar auditoría <span>→</span></a>
+          <a href="#obra" class="h-[48px] px-7 rounded-full border border-[#EAE4D9] bg-white inline-flex items-center text-[13px] hover:bg-[#F5F0E8] transition">Ver obra</a>
         </div>
 
-        <div class="mt-12 flex flex-wrap gap-4">
-          <a href={waLink} class="h-[52px] px-8 bg-black text-white rounded-full inline-flex items-center gap-4 text-[13px] tracking-[0.04em] hover:bg-[#1C1C1C] transition">
-            Solicitar auditoría privada <span class="opacity-60">→</span>
-          </a>
-          <a href="#obra" class="h-[52px] px-8 rounded-full border border-black/15 bg-white/50 backdrop-blur inline-flex items-center gap-2 text-[13px] hover:bg-white transition">
-            Ver obra seleccionada
-          </a>
+        <div class="mt-16 grid grid-cols-3 gap-8 max-w-[480px] border-t border-[#EAE4D9] pt-8">
+          <div>
+            <div class="font-display text-[36px] leading-none">2</div>
+            <div class="mt-2 text-[11px] leading-[1.4] uppercase tracking-[0.12em] opacity-50">Marketplaces<br/>Supabase + S3 + RLS</div>
+          </div>
+          <div>
+            <div class="font-display text-[36px] leading-none">80+</div>
+            <div class="mt-2 text-[11px] leading-[1.4] uppercase tracking-[0.12em] opacity-50">Landings locales<br/>SEO · 98 Lighthouse</div>
+          </div>
+          <div>
+            <div class="font-display text-[36px] leading-none">30+</div>
+            <div class="mt-2 text-[11px] leading-[1.4] uppercase tracking-[0.12em] opacity-50">Negocios locales<br/>VE · ES · US</div>
+          </div>
         </div>
       </div>
 
-      <!-- RIGHT — PROOF STACK ELEGANT -->
-      <div class="lg:pl-12 w-full">
-        <div class="relative rounded-[24px] bg-[#0E0E0E] p-6 md:p-8 text-[#FBF8F3] overflow-hidden">
-          <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#D8C5A2]/[0.08] blur-[80px] rounded-full"></div>
-          <div class="relative">
-            <div class="flex justify-between items-start">
-              <div class="text-[10px] tracking-[0.24em] uppercase font-mono opacity-40">Capacidad técnica en producción</div>
-              <div class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/10 border border-white/10">Supabase RLS · S3 · PWA</div>
-            </div>
-
-            <div class="mt-12 space-y-8">
-              <div>
-                <div class="font-display text-[32px] leading-[0.9]">VendeT Inmuebles</div>
-                <div class="mt-2 text-[12px] leading-[1.6] opacity-60">Marketplace inmobiliario completo. 13 tablas, vista vw_propiedades_publicas, 37 rutas, S3 Sharp 48KB, chat Realtime, admin, pagos, Sentry.</div>
-                <div class="mt-4 flex gap-2 font-mono text-[10px] opacity-50"><span>Next.js 14</span><span>·</span><span>Supabase SSR</span><span>·</span><span>13 TABLES</span></div>
-              </div>
-              <div class="h-[1px] bg-white/10"></div>
-              <div class="grid grid-cols-2 gap-6">
-                <div>
-                  <div class="font-display text-[28px] leading-none">80+</div>
-                  <div class="mt-2 text-[11px] leading-[1.4] opacity-50 uppercase tracking-[0.12em]">Landings SEO ReformaT<br/>IndexNow · 98 Lighthouse</div>
-                </div>
-                <div>
-                  <div class="font-display text-[28px] leading-none">1</div>
-                  <div class="mt-2 text-[11px] leading-[1.4] opacity-50 uppercase tracking-[0.12em]">App Python PDF<br/>CYPE + firma + facturas</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-10 rounded-[14px] bg-white/[0.06] border border-white/10 p-4 flex items-center justify-between">
-              <div class="text-[11px] font-mono tracking-[0.16em] uppercase opacity-60">ReformaT · Presupuestos · Marketplace VZLA</div>
-              <div class="w-6 h-6 rounded-full bg-white text-black grid place-items-center text-[12px]">↗</div>
+      <!-- right 5 cols image -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-[20px] overflow-hidden bg-[#F5F0E8] border border-[#EAE4D9] aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format" class="absolute inset-0 w-full h-full object-cover" alt="Interior lujo" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <div class="rounded-[14px] bg-white/90 backdrop-blur-xl border border-white/50 p-4">
+              <div class="flex justify-between items-center text-[10px] tracking-[0.16em] uppercase font-mono opacity-60"><span>VendeT Inmuebles — producción</span><span class="px-2 py-0.5 rounded-full bg-emerald-500 text-white">RLS ACTIVE</span></div>
+              <div class="mt-3 font-display text-[18px] leading-[1.1]">Marketplace 13 tablas · S3 · Realtime</div>
+              <div class="mt-2 text-[11px] leading-[1.5] opacity-60">Next.js 14 · Supabase SSR · 37 rutas · Sentry · PWA</div>
             </div>
           </div>
         </div>
+        <div class="mt-4 text-[11px] font-mono tracking-[0.12em] uppercase opacity-40 text-center">San Diego, Carabobo — Lanzarote, ES — Est. 2023</div>
+      </div>
+    </div>
+  </section>
 
-        <div class="mt-6 flex justify-between items-center text-[10px] tracking-[0.16em] uppercase font-mono opacity-40">
-          <span>San Diego, Carabobo — Lanzarote</span>
-          <span>Est. 2023 — Boutique</span>
+  <!-- PROOF BAR -->
+  <div class="border-y border-[#EAE4D9] bg-white">
+    <div class="mx-auto max-w-[1440px] px-8 md:px-12 h-[56px] flex items-center justify-between gap-6 overflow-x-auto">
+      <div class="text-[10px] tracking-[0.2em] uppercase font-mono opacity-40 whitespace-nowrap">Construido en producción:</div>
+      <div class="flex items-center gap-3 text-[11px] font-mono whitespace-nowrap">
+        <span class="px-3 h-7 rounded-full bg-[#121212] text-white inline-flex items-center">VendeT Inmuebles — 13 tablas RLS</span>
+        <span class="px-3 h-7 rounded-full border border-[#EAE4D9] inline-flex items-center">Marketplace VZLA — Realtime chat</span>
+        <span class="px-3 h-7 rounded-full border border-[#EAE4D9] inline-flex items-center">ReformaT — 80+ landings SEO 98</span>
+        <span class="px-3 h-7 rounded-full border border-[#EAE4D9] inline-flex items-center">Presupuestos — Python PDF</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANIFIESTO -->
+  <section class="mx-auto max-w-[1440px] px-8 md:px-12 py-24 md:py-36">
+    <div class="max-w-[1120px]">
+      <div class="flex gap-4 items-center">
+        <div class="h-[1px] w-12 bg-[#121212]"></div>
+        <div class="text-[11px] tracking-[0.24em] uppercase font-mono opacity-40">Manifiesto</div>
+      </div>
+      <h2 class="mt-8 font-display font-light text-[36px] md:text-[64px] leading-[0.9] tracking-[-0.04em] max-w-[18ch]">
+        Si cobras premium, no puedes verte como commodity.
+      </h2>
+      <div class="mt-16 grid md:grid-cols-3 gap-12 border-t border-[#EAE4D9] pt-12">
+        <div>
+          <div class="text-[11px] tracking-[0.18em] uppercase font-mono opacity-40">01 — Congruencia</div>
+          <p class="mt-4 text-[15px] leading-[1.7] font-light text-[#3A3935]">Local premium, equipo premium, materiales premium. Luego web con plantilla genérica. El cliente de ticket alto detecta la incongruencia en 4 segundos y se va.</p>
+        </div>
+        <div>
+          <div class="text-[11px] tracking-[0.18em] uppercase font-mono opacity-40">02 — Performance</div>
+          <p class="mt-4 text-[15px] leading-[1.7] font-light text-[#3A3935]">ReformaT carga en 0.9s, 98 Lighthouse, imágenes 48KB vs 910KB. No es vanidad técnica. Es respeto por el tiempo de quien paga $1.800 por una reforma en El Trigal.</p>
+        </div>
+        <div>
+          <div class="text-[11px] tracking-[0.18em] uppercase font-mono opacity-40">03 — Coste real</div>
+          <p class="mt-4 text-[15px] leading-[1.7] font-light text-[#3A3935]">Un cliente/mes perdido por web genérica × $900 = $10.800/año por ahorrar $600. Sin contar el posicionamiento perdido en Google.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MANIFESTO CENTERED LARGE -->
-  <section class="bg-white border-y border-black/5 py-24 md:py-40">
-    <div class="mx-auto max-w-[1720px] px-6 md:px-12">
-      <div class="max-w-[1200px]">
-        <div class="text-[11px] tracking-[0.28em] uppercase font-mono opacity-40">Manifiesto</div>
-        <h2 class="mt-8 font-display text-[44px] md:text-[84px] leading-[0.85] tracking-[-0.05em] font-light max-w-[18ch]">
-          Una web genérica <span class="italic">te hace perder</span> clientes que pagarían premium.
-        </h2>
-        <div class="mt-16 grid md:grid-cols-3 gap-12 md:gap-16 border-t border-black/10 pt-12">
-          <div>
-            <div class="text-[11px] tracking-[0.2em] uppercase font-mono opacity-40">01 — Congruencia</div>
-            <p class="mt-4 text-[15px] leading-[1.7] font-light">Inversión en local, equipo y materiales. Luego web con fotos pixeladas y tipografía genérica. El cliente premium detecta la incongruencia en 4 segundos y se va a quien sí se ve a su nivel.</p>
-          </div>
-          <div>
-            <div class="text-[11px] tracking-[0.2em] uppercase font-mono opacity-40">02 — Señal de respeto</div>
-            <p class="mt-4 text-[15px] leading-[1.7] font-light">ReformaT carga en 0.9s, 98 Lighthouse, imágenes 48KB vs 910KB. No es vanidad técnica. Es respeto por el tiempo de quien paga $1.800 por una reforma en El Trigal.</p>
-          </div>
-          <div>
-            <div class="text-[11px] tracking-[0.2em] uppercase font-mono opacity-40">03 — Coste real</div>
-            <p class="mt-4 text-[15px] leading-[1.7] font-light">Si tu ticket es $900 y pierdes 1 cliente al mes por verte genérico, son $10.800/año por ahorrarte $600 en web. Sin contar Google.</p>
-            <div class="mt-6 h-[1px] bg-black"></div>
-            <div class="mt-4 text-[12px] font-mono tracking-[0.12em] uppercase opacity-40">No es gasto. Es pérdida evitable.</div>
+  <!-- OBRA -->
+  <section id="obra" class="bg-[#121212] text-[#FDFCF9] py-20 md:py-28">
+    <div class="mx-auto max-w-[1440px] px-8 md:px-12">
+      <div class="flex flex-wrap justify-between items-end gap-6 border-b border-white/10 pb-10">
+        <h2 class="font-display font-light text-[40px] md:text-[64px] leading-[0.85] tracking-[-0.04em]">Obra seleccionada<br/><span class="italic opacity-60 text-[36px] md:text-[48px]">— producción</span></h2>
+        <div class="max-w-[320px] text-[13px] leading-[1.6] opacity-60">Cada proyecto es repo público con código y deploy. El lujo se demuestra en la base de datos, no en Dribbble.</div>
+      </div>
+
+      <!-- VENDET FULL -->
+      <a href="https://github.com/gtrespana-bit/vendet-inmuebles" target="_blank" class="mt-12 grid lg:grid-cols-12 gap-0 rounded-[24px] overflow-hidden bg-[#1A1A1A] border border-white/10 group">
+        <div class="lg:col-span-7 relative min-h-[480px] md:min-h-[560px]">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=80" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-80 group-hover:scale-[1.02] transition duration-[1.2s]" alt="" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute top-6 left-6 text-[10px] tracking-[0.18em] uppercase font-mono px-3 h-7 rounded-full bg-white text-black inline-flex items-center">Proyecto enorme · 2025-26</div>
+          <div class="absolute bottom-6 left-6 right-6 flex gap-2 font-mono text-[10px]">
+            <span class="px-3 h-6 rounded-full bg-black/60 backdrop-blur border border-white/20 text-white inline-flex items-center">13 tablas RLS</span>
+            <span class="px-3 h-6 rounded-full bg-black/60 backdrop-blur border border-white/20 text-white inline-flex items-center">S3 Signed URL</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OBRA SELECTA — FULL BLEED EDITORIAL -->
-  <section id="obra" class="bg-[#FBF8F3]">
-    <div class="mx-auto max-w-[1720px] px-6 md:px-12 py-20 md:py-32">
-      <div class="flex flex-wrap justify-between items-end gap-8">
-        <h2 class="font-display text-[48px] md:text-[80px] leading-[0.85] tracking-[-0.05em] font-light">Obra seleccionada<br/><span class="italic opacity-60">— producción, no mockups</span></h2>
-        <div class="max-w-[320px] text-[13px] leading-[1.6] opacity-60 font-light">Cada proyecto es repo público con schema, código y deploy. Abre el código. El lujo se demuestra en la base de datos, no en Dribbble.</div>
-      </div>
-
-      <!-- VENDET FULL BLEED -->
-      <a href="https://github.com/gtrespana-bit/vendet-inmuebles" target="_blank" class="mt-16 group block relative rounded-[32px] overflow-hidden bg-[#0E0E0E] min-h-[640px] md:min-h-[760px]">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=2000&q=80&auto=format" class="absolute inset-0 w-full h-full object-cover opacity-[0.35] group-hover:opacity-[0.45] group-hover:scale-[1.02] transition duration-[1.6s] ease-[cubic-bezier(.22,1,.36,1)]" alt="" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent"></div>
-
-        <div class="relative h-full min-h-[640px] md:min-h-[760px] flex flex-col justify-between p-8 md:p-12">
-          <div class="flex justify-between">
-            <div class="inline-flex h-7 px-4 rounded-full bg-white text-black text-[10px] tracking-[0.2em] uppercase font-mono items-center">Proyecto enorme · 2025-26</div>
-            <div class="text-[11px] font-mono tracking-[0.16em] uppercase text-white/50 hidden md:block">Next.js 14 · Supabase SSR · S3 · Sharp · Sentry · 13 TABLES · 37 RUTAS</div>
+        <div class="lg:col-span-5 p-8 md:p-10 flex flex-col justify-between">
+          <div>
+            <div class="font-display text-[40px] leading-[0.9]">VendeT Inmuebles</div>
+            <p class="mt-4 text-[14px] leading-[1.6] opacity-60">Marketplace inmobiliario completo. Publicación con S3 + Sharp, vista vw_propiedades_publicas, chat Realtime, admin moderación, destacados pagados, suscripciones, auditoría, PWA offline, Sentry.</p>
           </div>
-
-          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-end">
-            <div>
-              <div class="font-display text-[56px] md:text-[88px] leading-[0.85] tracking-[-0.05em] text-white">VendeT<br/>Inmuebles</div>
-              <div class="mt-6 max-w-[48ch] text-[16px] leading-[1.6] text-white/70 font-light">
-                Marketplace inmobiliario completo. Publicación con S3 + Sharp, vista <em class="text-white">vw_propiedades_publicas</em>, chat Realtime, admin moderación, destacados pagados, suscripciones, auditoría, PWA offline, Sentry. De un folleto a una plataforma que soporta operación real.
-              </div>
-              <div class="mt-8 inline-flex items-center gap-3 text-white text-[12px] tracking-[0.14em] uppercase border-b border-white/20 pb-2 group-hover:gap-5 transition-all">Ver schema DB y código →</div>
+          <div>
+            <div class="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-6 font-mono text-[11px]">
+              <div><div class="opacity-40 uppercase">Tablas</div><div class="mt-1 text-[16px] font-display">13 + RLS</div></div>
+              <div><div class="opacity-40 uppercase">Rutas</div><div class="mt-1 text-[16px] font-display">37</div></div>
+              <div><div class="opacity-40 uppercase">Storage</div><div class="mt-1 text-[16px] font-display">S3 48KB</div></div>
             </div>
-            <div class="lg:pl-12">
-              <div class="rounded-[20px] bg-white/[0.08] backdrop-blur-xl border border-white/10 p-6">
-                <div class="grid grid-cols-3 gap-6 text-white font-mono text-[11px]">
-                  <div><div class="opacity-40 uppercase tracking-[0.14em]">Tablas</div><div class="mt-2 text-[14px] font-display tracking-normal">13 + RLS</div></div>
-                  <div><div class="opacity-40 uppercase tracking-[0.14em]">Rutas</div><div class="mt-2 text-[14px] font-display">37</div></div>
-                  <div><div class="opacity-40 uppercase tracking-[0.14em]">Storage</div><div class="mt-2 text-[14px] font-display">S3 48KB</div></div>
-                </div>
-                <div class="mt-6 pt-6 border-t border-white/10 text-[11px] leading-[1.5] text-white/50 font-mono">inmuebles + inmueble_imagenes + caracteristicas + perfiles + pagos + suscripciones + destacados + mensajes + operaciones</div>
-              </div>
-            </div>
+            <div class="mt-8 text-[12px] tracking-[0.06em] border-b border-white/20 pb-2 inline-flex">Ver schema DB y código →</div>
           </div>
         </div>
       </a>
 
-      <!-- 2 COL -->
       <div class="mt-6 grid lg:grid-cols-2 gap-6">
-        <a href="https://github.com/gtrespana-bit/Marketplace-vzla" target="_blank" class="group relative rounded-[24px] bg-white border border-black/5 p-8 md:p-10 overflow-hidden min-h-[520px] flex flex-col justify-between">
+        <a href="https://github.com/gtrespana-bit/Marketplace-vzla" target="_blank" class="rounded-[20px] bg-[#1E1E1E] border border-white/10 p-8 flex flex-col gap-8 hover:bg-[#222] transition">
           <div>
-            <div class="flex justify-between"><span class="text-[10px] tracking-[0.2em] uppercase font-mono px-3 h-6 rounded-full bg-black text-white inline-flex items-center">Marketplace VZLA</span><span class="text-[10px] font-mono opacity-40">2025 · vendet.online</span></div>
-            <div class="mt-10 font-display text-[40px] leading-[0.9]">Marketplace general para Venezuela</div>
-            <p class="mt-4 text-[14px] leading-[1.6] opacity-60 max-w-[44ch]">Vehículos, tecnología, hogar. 8 categorías con marcas y campos dinámicos, chat Realtime, créditos, verificación, tasa BCV, moderación automática, PWA TTL 7d.</p>
+            <div class="text-[10px] tracking-[0.18em] uppercase font-mono opacity-40">Marketplace VZLA — General</div>
+            <div class="mt-4 font-display text-[32px] leading-[0.9]">Marketplace para todo Venezuela</div>
+            <p class="mt-3 text-[13px] leading-[1.6] opacity-60">Carros, tecnología, hogar. 8 categorías con marcas dinámicas, chat Realtime, créditos, verificación, tasa BCV, moderación automática, PWA TTL 7d.</p>
           </div>
-          <div class="mt-10 aspect-[16/10] rounded-[16px] bg-[#F8F5F0] border border-black/5 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition duration-[1.2s]" alt="" />
+          <div class="rounded-[12px] overflow-hidden aspect-[16/10] bg-[#2A2A2A] relative">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000&q=80" class="absolute inset-0 w-full h-full object-cover opacity-70" alt="" />
           </div>
-          <div class="mt-6 font-mono text-[10px] opacity-40 tracking-[0.14em] uppercase">categorias.ts · push.ts · rate-limit · moderacion.ts · ubicaciones.ts</div>
         </a>
-
-        <a href="https://github.com/gtrespana-bit/reformat-venezuela" target="_blank" class="group relative rounded-[24px] bg-[#0E0E0E] text-white p-8 md:p-10 overflow-hidden min-h-[520px] flex flex-col justify-between">
+        <a href="https://github.com/gtrespana-bit/reformat-venezuela" target="_blank" class="rounded-[20px] bg-[#FDFCF9] text-[#121212] p-8 flex flex-col gap-8 border border-[#EAE4D9] hover:bg-white transition">
           <div>
-            <div class="flex justify-between"><span class="text-[10px] tracking-[0.2em] uppercase font-mono px-3 h-6 rounded-full bg-white text-black inline-flex items-center">ReformaT Venezuela · SEO 98</span><span class="text-[10px] font-mono opacity-40">2024-26</span></div>
-            <div class="mt-10 font-display text-[40px] leading-[0.9]">80+ landings que generan leads mientras duermes</div>
-            <p class="mt-4 text-[14px] leading-[1.6] opacity-60 max-w-[44ch]">Sitemap con prioridades Carabobo 0.95 > Caracas 0.4. Scripts check-images, IndexNow, inject-dimensions. No Yoast. Performance 98, PWA.</p>
+            <div class="text-[10px] tracking-[0.18em] uppercase font-mono opacity-40">ReformaT Venezuela — SEO 98</div>
+            <div class="mt-4 font-display text-[32px] leading-[0.9]">80+ landings que generan leads mientras duermes</div>
+            <p class="mt-3 text-[13px] leading-[1.6] opacity-60">Sitemap prioridades Carabobo 0.95, IndexNow, check-images. Performance 98, PWA, viewTransitions.</p>
           </div>
-          <div class="mt-10 grid grid-cols-3 gap-3">
-            <div class="rounded-[14px] bg-white/[0.07] border border-white/10 p-4"><div class="font-mono text-[10px] opacity-40">Sitemap</div><div class="mt-2 font-display text-[20px]">0.95</div><div class="text-[10px] opacity-40 mt-1">San Diego</div></div>
-            <div class="rounded-[14px] bg-[#D8C5A2] text-black p-4"><div class="font-mono text-[10px] opacity-60">Landings</div><div class="mt-2 font-display text-[20px]">80+</div><div class="text-[10px] opacity-60 mt-1">zonas</div></div>
-            <div class="rounded-[14px] bg-white/[0.07] border border-white/10 p-4"><div class="font-mono text-[10px] opacity-40">Perf</div><div class="mt-2 font-display text-[20px]">98</div><div class="text-[10px] opacity-40 mt-1">Lighthouse</div></div>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="rounded-[12px] bg-[#121212] text-white p-4"><div class="font-mono text-[10px] opacity-40">Sitemap</div><div class="mt-1 font-display text-[20px]">0.95</div></div>
+            <div class="rounded-[12px] bg-[#F5F0E8] border border-black/10 p-4"><div class="font-mono text-[10px] opacity-40">Landings</div><div class="mt-1 font-display text-[20px]">80+</div></div>
+            <div class="rounded-[12px] bg-white border border-black/10 p-4"><div class="font-mono text-[10px] opacity-40">Perf</div><div class="mt-1 font-display text-[20px]">98</div></div>
           </div>
         </a>
-      </div>
-
-      <!-- THIRD ROW -->
-      <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <a href="https://github.com/gtrespana-bit/presupuestos" target="_blank" class="rounded-[20px] border border-black/10 p-7 bg-white hover:bg-[#F8F5F0] transition">
-          <div class="font-mono text-[10px] tracking-[0.18em] uppercase opacity-40">Python · PDF Engine</div>
-          <div class="mt-4 font-display text-[22px] leading-[0.95]">Presupuestos — app desktop que factura</div>
-          <p class="mt-3 text-[12.5px] leading-[1.6] opacity-60">Motor ReportLab, firma digital, CYPE import, facturas, backup ZIP. No es web. Es software que cobra.</p>
-        </a>
-        <a href="https://github.com/gtrespana-bit/Majestic" target="_blank" class="rounded-[20px] border border-black/10 p-7 bg-white hover:bg-[#F8F5F0] transition">
-          <div class="font-mono text-[10px] tracking-[0.18em] uppercase opacity-40">Majestic Studio · Visual premium</div>
-          <div class="mt-4 font-display text-[22px] leading-[0.95]">Dirección de arte tech con 3D</div>
-          <p class="mt-3 text-[12.5px] leading-[1.6] opacity-60">Spline 3D, magnetic UI, holo. Cuando la marca necesita wow, no solo confianza.</p>
-        </a>
-        <div class="rounded-[20px] bg-black text-white p-7 flex flex-col justify-between">
-          <div class="font-mono text-[10px] tracking-[0.18em] uppercase opacity-40">Colección 20+ locales</div>
-          <div class="mt-4 font-display text-[22px] leading-[0.95]">Clínicas, inmobiliarias, estéticas</div>
-          <p class="mt-3 text-[12.5px] leading-[1.6] opacity-60">Mismo sistema de conversión: confianza + WhatsApp + fotos reales optimizadas. EuroKlinik, PodoDent, Vanity.</p>
-          <div class="mt-6 text-[11px] font-mono opacity-40">→ Sistema, no plantilla</div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- CAPACIDAD QUIET -->
-  <section id="capacidad" class="bg-[#0E0E0E] text-[#FBF8F3] py-24 md:py-36 relative overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#D8C5A2]/[0.06] blur-[120px] rounded-full"></div>
-    <div class="relative mx-auto max-w-[1720px] px-6 md:px-12 grid lg:grid-cols-[0.8fr_1.2fr] gap-16 md:gap-24">
-      <div>
-        <div class="text-[11px] tracking-[0.28em] uppercase font-mono opacity-30">Capacidad técnica</div>
-        <h2 class="mt-6 font-display text-[44px] md:text-[64px] leading-[0.85] tracking-[-0.04em] font-light">De landing 98<br/>a marketplace 13 tablas.<br/><span class="italic opacity-60">Mismo estudio.</span></h2>
-        <div class="mt-10 text-[14px] leading-[1.7] opacity-60 font-light max-w-[40ch]">Si puedo con RLS, S3 signed URLs y Realtime, tu landing boutique con WhatsApp tracking es la parte fácil. Te entrego repo como en VendeT: con DB schema, PROJECT.md, migraciones.</div>
-        <a href="https://github.com/gtrespana-bit/vendet-inmuebles" target="_blank" class="mt-10 inline-flex h-10 px-5 rounded-full border border-white/15 items-center gap-2 text-[11px] tracking-[0.14em] uppercase hover:bg-white hover:text-black transition">Ver DB schema completo →</a>
+  <!-- CAPACIDAD -->
+  <section id="capacidad" class="mx-auto max-w-[1440px] px-8 md:px-12 py-24 md:py-32">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <div class="text-[11px] tracking-[0.22em] uppercase font-mono opacity-40">Capacidad técnica</div>
+        <h2 class="mt-6 font-display text-[40px] md:text-[56px] leading-[0.85] tracking-[-0.04em]">De landing 98<br/>a marketplace<br/><span class="italic opacity-60">13 tablas.</span></h2>
+        <p class="mt-6 max-w-[36ch] text-[14px] leading-[1.7] opacity-60">Si puedo con RLS, S3 signed URLs y Realtime, tu landing boutique es la parte fácil. Entrego repo con schema, PROJECT.md y migraciones como en VendeT.</p>
+        <a href="https://github.com/gtrespana-bit/vendet-inmuebles" target="_blank" class="mt-8 inline-flex h-10 px-5 rounded-full border border-[#EAE4D9] bg-white items-center text-[12px] gap-2 hover:bg-[#F5F0E8] transition">Ver DB schema →</a>
       </div>
-      <div class="grid gap-[1px] bg-white/10 rounded-[24px] overflow-hidden border border-white/10">
-        <div class="bg-[#141414] p-8 md:p-10 grid md:grid-cols-2 gap-10">
+      <div class="lg:col-span-7 grid gap-[1px] bg-[#EAE4D9] border border-[#EAE4D9] rounded-[20px] overflow-hidden">
+        <div class="bg-white p-8 grid md:grid-cols-2 gap-8">
           <div>
-            <div class="font-mono text-[10px] tracking-[0.2em] uppercase opacity-30">Stack VendeT · Producción</div>
-            <div class="mt-6 space-y-4 font-mono text-[12px]">
+            <div class="font-mono text-[10px] tracking-[0.18em] uppercase opacity-40">VendeT · Stack producción</div>
+            <div class="mt-6 space-y-3 text-[13px] font-mono">
               <div class="flex justify-between"><span class="opacity-40">Next.js</span><span>14 App Router</span></div>
-              <div class="flex justify-between"><span class="opacity-40">Supabase</span><span>SSR + Auth + Realtime + Storage</span></div>
-              <div class="flex justify-between"><span class="opacity-40">Storage</span><span>S3 + Sharp 48KB</span></div>
-              <div class="flex justify-between"><span class="opacity-40">PWA</span><span>offline + push · TTL 7d</span></div>
-              <div class="flex justify-between"><span class="opacity-40">Observabilidad</span><span>Sentry + Analytics</span></div>
+              <div class="flex justify-between"><span class="opacity-40">Supabase</span><span>SSR + Realtime</span></div>
+              <div class="flex justify-between"><span class="opacity-40">Storage</span><span>S3 + Sharp</span></div>
+              <div class="flex justify-between"><span class="opacity-40">PWA</span><span>offline + push</span></div>
             </div>
           </div>
           <div>
-            <div class="font-mono text-[10px] tracking-[0.2em] uppercase opacity-30">Stack ReformaT · Lead Gen</div>
-            <div class="mt-6 space-y-4 font-mono text-[12px]">
-              <div class="flex justify-between"><span class="opacity-40">Astro</span><span>5 · viewTransitions</span></div>
+            <div class="font-mono text-[10px] tracking-[0.18em] uppercase opacity-40">ReformaT · Lead Gen</div>
+            <div class="mt-6 space-y-3 text-[13px] font-mono">
+              <div class="flex justify-between"><span class="opacity-40">Astro</span><span>5 · 98 Lighthouse</span></div>
               <div class="flex justify-between"><span class="opacity-40">SEO</span><span>80+ landings · IndexNow</span></div>
-              <div class="flex justify-between"><span class="opacity-40">Perf</span><span>98 Lighthouse · 0.9s</span></div>
-              <div class="flex justify-between"><span class="opacity-40">Build</span><span>check-images · sitemap priority</span></div>
-              <div class="flex justify-between"><span class="opacity-40">Python</span><span>ReportLab PDF · CYPE import</span></div>
+              <div class="flex justify-between"><span class="opacity-40">Python</span><span>ReportLab PDF · CYPE</span></div>
             </div>
           </div>
         </div>
-        <div class="bg-[#0E0E0E] p-8 md:p-10 flex flex-wrap gap-8 items-center justify-between">
-          <div class="font-mono text-[10px] tracking-[0.18em] uppercase opacity-30">37 rutas · middleware i18n · rate-limit · moderación · tasa BCV · email + telegram</div>
-          <div class="flex gap-2"><span class="h-7 px-3 rounded-full bg-white text-black text-[11px] inline-flex items-center font-medium">Astro 5 + Next.js 14</span><span class="h-7 px-3 rounded-full border border-white/15 text-[11px] inline-flex items-center">Supabase 13 tables RLS</span></div>
+        <div class="bg-[#FDFCF9] p-6 flex flex-wrap justify-between items-center gap-4">
+          <div class="text-[11px] font-mono opacity-40">37 rutas · i18n · rate-limit · moderación · tasa BCV</div>
+          <div class="flex gap-2"><span class="h-7 px-3 rounded-full bg-black text-white text-[11px] inline-flex items-center">Astro + Next.js</span><span class="h-7 px-3 rounded-full border border-[#EAE4D9] text-[11px] inline-flex items-center">Supabase RLS</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- METODO HORIZONTAL LUXURY -->
-  <section id="metodo" class="bg-[#FBF8F3] py-24 md:py-36 border-y border-black/5">
-    <div class="mx-auto max-w-[1720px] px-6 md:px-12">
+  <!-- METODO -->
+  <section id="metodo" class="bg-[#F5F0E8] border-y border-[#EAE4D9] py-20 md:py-28">
+    <div class="mx-auto max-w-[1440px] px-8 md:px-12">
       <div class="flex flex-wrap justify-between items-end gap-8">
-        <h2 class="font-display text-[42px] md:text-[68px] leading-[0.85] tracking-[-0.05em] font-light">Método de obra<br/><span class="italic opacity-60">bien hecha, sin humo</span></h2>
-        <div class="max-w-[360px] text-[13.5px] leading-[1.7] opacity-60">Como en ReformaT: diagnóstico, especificación correcta, ejecución supervisada, entrega con checklist. Te entrego repo, no dependencia.</div>
+        <h2 class="font-display text-[40px] md:text-[56px] leading-[0.85]">Método de obra<br/><span class="italic opacity-60">bien hecha, sin humo</span></h2>
+        <div class="max-w-[340px] text-[13px] leading-[1.6] opacity-60">Como en ReformaT: diagnóstico, especificación correcta, ejecución supervisada, entrega con checklist. Repo privado, no dependencia.</div>
       </div>
-
-      <div class="mt-20 grid md:grid-cols-4 gap-[1px] bg-black/5 border border-black/5 rounded-[24px] overflow-hidden">
-        <div class="bg-white p-8 md:p-10">
-          <div class="font-display text-[64px] leading-none opacity-10">01</div>
-          <div class="mt-6 font-medium text-[15px]">Diagnóstico honesto</div>
-          <p class="mt-3 text-[13px] leading-[1.7] opacity-60">Loom 10min con tu web, competencia local y gaps. Te digo si necesitas web nueva, re-diseño o nada. Gratis.</p>
-          <div class="mt-8 font-mono text-[10px] tracking-[0.16em] uppercase opacity-30">Entregable: Notion + video</div>
+      <div class="mt-16 grid md:grid-cols-4 gap-[1px] bg-[#EAE4D9] border border-[#EAE4D9] rounded-[20px] overflow-hidden">
+        <div class="bg-white p-8">
+          <div class="font-display text-[48px] leading-none opacity-10">01</div>
+          <div class="mt-6 text-[14px] font-medium">Diagnóstico honesto</div>
+          <p class="mt-3 text-[13px] leading-[1.6] opacity-60">Loom 10min con tu web, competencia y gaps. Te digo si necesitas web nueva o nada. Gratis.</p>
         </div>
-        <div class="bg-white p-8 md:p-10">
-          <div class="font-display text-[64px] leading-none opacity-10">02</div>
-          <div class="mt-6 font-medium text-[15px]">Dirección de arte</div>
-          <p class="mt-3 text-[13px] leading-[1.7] opacity-60">Moodboard, tipografías, paleta, fotos. Definimos si tu negocio debe verse boutique clínico, inmobiliario de lujo o técnico.</p>
+        <div class="bg-white p-8">
+          <div class="font-display text-[48px] leading-none opacity-10">02</div>
+          <div class="mt-6 text-[14px] font-medium">Dirección de arte</div>
+          <p class="mt-3 text-[13px] leading-[1.6] opacity-60">Moodboard, tipografías, fotos. Definimos si tu negocio debe verse boutique clínico o inmobiliario de lujo.</p>
         </div>
-        <div class="bg-white p-8 md:p-10">
-          <div class="font-display text-[64px] leading-none opacity-10">03</div>
-          <div class="mt-6 font-medium text-[15px]">Build — Astro / Next.js</div>
-          <p class="mt-3 text-[13px] leading-[1.7] opacity-60">Código limpio, webp 48KB, sitemap priority, Search Console, IndexNow, WhatsApp tracking. Si escala, base VendeT.</p>
+        <div class="bg-white p-8">
+          <div class="font-display text-[48px] leading-none opacity-10">03</div>
+          <div class="mt-6 text-[14px] font-medium">Build limpio</div>
+          <p class="mt-3 text-[13px] leading-[1.6] opacity-60">Astro / Next.js, webp 48KB, sitemap priority, IndexNow, WhatsApp tracking. Base VendeT si escala.</p>
         </div>
-        <div class="bg-[#0E0E0E] text-white p-8 md:p-10">
-          <div class="font-display text-[64px] leading-none opacity-20">04</div>
-          <div class="mt-6 font-medium text-[15px]">Lanzamiento y medición</div>
-          <p class="mt-3 text-[13px] leading-[1.7] opacity-60">Deploy Vercel, PWA, medición de consultas no visitas. Repo privado + Loom mantenimiento.</p>
-          <div class="mt-8 inline-flex h-8 px-4 rounded-full bg-white text-black text-[11px] items-center">Checklist entrega →</div>
+        <div class="bg-[#121212] text-white p-8">
+          <div class="font-display text-[48px] leading-none opacity-20">04</div>
+          <div class="mt-6 text-[14px] font-medium">Lanzamiento</div>
+          <p class="mt-3 text-[13px] leading-[1.6] opacity-60">Deploy Vercel, Search Console, PWA, medición de consultas. Repo + Loom mantenimiento.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ESTUDIO BOUTIQUE — FINAL -->
-  <section class="bg-white py-24 md:py-32">
-    <div class="mx-auto max-w-[1720px] px-6 md:px-12 grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-start">
-      <div>
-        <h2 class="font-display text-[48px] md:text-[80px] leading-[0.85] tracking-[-0.06em] font-light">Estudio boutique.<br/><span class="italic">2 plazas</span> por trimestre.</h2>
-        <div class="mt-10 max-w-[48ch] text-[15px] leading-[1.7] opacity-60 font-light">No somos agencia de volumen. Tomamos 2 proyectos por trimestre para mantener estándar europeo. Si buscas $250 en 3 días, hay mil opciones en Fiverr. Si tu ticket es $800+ y valoras congruencia, performance y SEO real, hablemos.</div>
-        <div class="mt-12 flex gap-10 border-t border-black/10 pt-10 max-w-[520px]">
-          <div><div class="font-display text-[36px] leading-none">VE · ES</div><div class="mt-2 font-mono text-[10px] tracking-[0.16em] uppercase opacity-40">San Diego, Carabobo — Lanzarote</div></div>
-          <div class="border-l border-black/10 pl-10"><div class="font-display text-[36px] leading-none">2023 —</div><div class="mt-2 font-mono text-[10px] tracking-[0.16em] uppercase opacity-40">Boutique — repo privado — Vercel</div></div>
-        </div>
+  <!-- ESTUDIO -->
+  <section class="mx-auto max-w-[1440px] px-8 md:px-12 py-24 md:py-32 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-7">
+      <h2 class="font-display text-[40px] md:text-[64px] leading-[0.85]">Estudio boutique.<br/><span class="italic opacity-60">2 plazas por trimestre.</span></h2>
+      <p class="mt-8 max-w-[52ch] text-[15px] leading-[1.7] opacity-60">No somos agencia de volumen. Tomamos 2 proyectos por trimestre para mantener estándar europeo. Si buscas $250 en 3 días, hay mil opciones en Fiverr. Si tu ticket es $800+ y valoras congruencia, hablemos.</p>
+      <div class="mt-12 flex gap-10 border-t border-[#EAE4D9] pt-8 max-w-[480px]">
+        <div><div class="font-display text-[28px]">VE · ES</div><div class="mt-1 font-mono text-[10px] uppercase opacity-40">San Diego — Lanzarote</div></div>
+        <div class="border-l border-[#EAE4D9] pl-10"><div class="font-display text-[28px]">2023 —</div><div class="mt-1 font-mono text-[10px] uppercase opacity-40">Boutique — repo privado</div></div>
       </div>
-
-      <div class="rounded-[24px] bg-[#0E0E0E] text-white p-8 md:p-10">
-        <div class="font-mono text-[10px] tracking-[0.24em] uppercase opacity-40">Filtro honesto — no para todos</div>
-        <div class="mt-8 space-y-6">
-          <div class="flex gap-4"><span class="opacity-40">✓</span><span class="text-[14px] leading-[1.5]">Negocio con local físico, ticket $500+ que sabe que su cliente paga por confianza, no por precio.</span></div>
-          <div class="flex gap-4"><span class="opacity-40">✓</span><span class="text-[14px] leading-[1.5]">Valora diseño sobrio, rápido, que aparece en Google, sin efectos que marean.</span></div>
-          <div class="flex gap-4"><span class="opacity-20">✕</span><span class="text-[14px] leading-[1.5] opacity-60">Si buscas lo más barato en 72h, no somos tu estudio. Y está bien.</span></div>
-        </div>
-        <div class="mt-10 rounded-[16px] bg-white text-black p-6">
-          <div class="font-mono text-[10px] tracking-[0.18em] uppercase opacity-40">Coste de no hacerlo</div>
-          <div class="mt-3 font-display text-[20px] leading-[1.1]">1 cliente/mes perdido × $900 = $10.800/año por ahorrar $700 en web.</div>
-          <a href={waLink} class="mt-5 h-10 w-full rounded-full bg-black text-white grid place-items-center text-[12px] tracking-wide">Solicitar auditoría privada →</a>
-        </div>
+    </div>
+    <div class="lg:col-span-5 rounded-[20px] bg-[#121212] text-white p-8">
+      <div class="text-[11px] tracking-[0.18em] uppercase font-mono opacity-40">Filtro honesto</div>
+      <div class="mt-6 space-y-4 text-[14px] leading-[1.6]">
+        <div class="flex gap-3"><span class="opacity-40">✓</span><span>Negocio con local físico, ticket $500+ que sabe que cliente paga por confianza.</span></div>
+        <div class="flex gap-3"><span class="opacity-40">✓</span><span>Valora diseño sobrio, rápido, que aparece en Google.</span></div>
+        <div class="flex gap-3"><span class="opacity-30">✕</span><span class="opacity-60">Si buscas lo más barato en 72h, no somos tu estudio.</span></div>
+      </div>
+      <div class="mt-8 rounded-[14px] bg-white text-black p-5">
+        <div class="font-display text-[18px] leading-[1.1]">1 cliente/mes perdido × $900 = $10.800/año por ahorrar $700.</div>
+        <a href={waLink} class="mt-4 h-10 rounded-full bg-black text-white w-full grid place-items-center text-[12px]">Solicitar auditoría privada →</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL QUIET LUXURY -->
-  <section class="bg-[#0E0E0E] text-[#FBF8F3] py-24 md:py-40 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.06]" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 32px 32px"></div>
-    <div class="relative mx-auto max-w-[1720px] px-6 md:px-12 text-center">
-      <div class="inline-flex items-center gap-2 h-8 px-4 rounded-full border border-white/10 bg-white/[0.06] backdrop-blur font-mono text-[10px] tracking-[0.22em] uppercase"><span class="w-1.5 h-1.5 rounded-full bg-[#D8C5A2]"></span> Auditoría privada — Loom 10min — sin pitch</div>
-      <h2 class="mt-12 font-display text-[52px] md:text-[104px] leading-[0.82] tracking-[-0.06em] font-light max-w-[14ch] mx-auto">¿Tu web transmite<br/><span class="italic opacity-60">el nivel que cobras?</span></h2>
-      <p class="mt-8 max-w-[56ch] mx-auto text-[15px] leading-[1.7] opacity-60">Te digo en 10 minutos si necesitas web nueva, re-diseño o nada. Diagnóstico honesto primero, como en obra. Si encajamos, 2 plazas este trimestre.</p>
-      <div class="mt-12 flex flex-wrap justify-center gap-4">
-        <a href={waLink} class="h-[56px] px-10 rounded-full bg-white text-black inline-flex items-center gap-3 text-[13px] font-medium hover:bg-[#F4EFE7] transition">Solicitar auditoría por WhatsApp <span class="opacity-40">→</span></a>
-        <div class="h-[56px] px-6 rounded-full border border-white/15 inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase opacity-60">San Diego · Lanzarote · &lt;2h</div>
+  <!-- CTA -->
+  <section class="bg-[#121212] text-white py-24 md:py-36">
+    <div class="mx-auto max-w-[1440px] px-8 md:px-12 text-center">
+      <div class="inline-flex h-8 px-4 rounded-full border border-white/10 bg-white/5 items-center gap-2 text-[10px] tracking-[0.18em] uppercase font-mono"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Auditoría privada — Loom 10min — sin pitch</div>
+      <h2 class="mt-10 font-display text-[48px] md:text-[84px] leading-[0.85] tracking-[-0.04em] max-w-[12ch] mx-auto">¿Tu web transmite el nivel que cobras?</h2>
+      <p class="mt-6 max-w-[48ch] mx-auto text-[15px] leading-[1.6] opacity-60">Diagnóstico honesto primero, como en obra. Si encajamos, 2 plazas este trimestre.</p>
+      <div class="mt-10 flex justify-center gap-3">
+        <a href={waLink} class="h-[52px] px-8 rounded-full bg-white text-black inline-flex items-center text-[13px] gap-2 hover:bg-[#F5F0E8] transition">Auditoría por WhatsApp <span>→</span></a>
+        <div class="h-[52px] px-6 rounded-full border border-white/15 inline-flex items-center text-[11px] tracking-[0.14em] uppercase opacity-60">San Diego · Lanzarote · &lt;2h</div>
       </div>
-      <div class="mt-20 font-mono text-[10px] tracking-[0.20em] uppercase opacity-20">VendeT Inmuebles — Marketplace VZLA — ReformaT — Presupuestos Python — 30+ negocios — Supabase RLS · S3 · PWA · Sentry · Astro</div>
     </div>
   </section>
 
-  <footer class="bg-[#FBF8F3] border-t border-black/5 py-10">
-    <div class="mx-auto max-w-[1720px] px-6 md:px-12 flex flex-wrap justify-between gap-4 text-[11px] font-mono tracking-[0.08em] opacity-40">
-      <div>© 2026 ESTUDIO · De marketplace 13 tablas RLS a landing 98 Lighthouse · <a class="underline decoration-black/20" href="https://github.com/gtrespana-bit/vendet-inmuebles">VendeT</a> · <a class="underline decoration-black/20" href="https://github.com/gtrespana-bit/reformat-venezuela">ReformaT</a></div>
-      <div>VE / ES — Astro — Vercel</div>
+  <footer class="bg-[#FDFCF9] border-t border-[#EAE4D9] py-8">
+    <div class="mx-auto max-w-[1440px] px-8 md:px-12 flex flex-wrap justify-between gap-4 text-[11px] font-mono opacity-40">
+      <div>© 2026 ESTUDIO — De marketplace 13 tablas RLS a landing 98 Lighthouse — <a class="underline" href="https://github.com/gtrespana-bit/vendet-inmuebles">VendeT</a> · <a class="underline" href="https://github.com/gtrespana-bit/reformat-venezuela">ReformaT</a></div>
+      <div>VE / ES — Astro</div>
     </div>
   </footer>
 
