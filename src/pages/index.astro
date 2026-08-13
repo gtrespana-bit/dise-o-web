@@ -4,49 +4,75 @@ import Base from '../layouts/Base.astro';
 const waMessage = encodeURIComponent('Hola, vi su web de diseño web. Quiero una valoración para mi negocio. Mi empresa es...');
 const waLink = `https://wa.me/584000000000?text=${waMessage}`;
 
+const massiveProjects = [
+  {
+    cat: 'PLATAFORMA INMOBILIARIA · PROYECTO ENORME',
+    name: 'VendeT Inmuebles',
+    desc: 'Marketplace inmobiliario completo: Next.js 14 + Supabase SSR + S3 + Auth + chat interno + panel admin + suscripciones + destacados + PWA + Sentry. 37 carpetas de rutas, API, i18n, auditoría. En producción.',
+    href: 'https://github.com/gtrespana-bit/vendet-inmuebles',
+    year: '2025-26',
+    img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format',
+    tags: ['Next.js 14','Supabase','S3 & Sharp','Realtime Chat','PWA','Sentry'],
+    stats: ['inmuebles + inmueble_imagenes + perfiles + pagos','vista vw_propiedades_publicas','37 rutas locales'],
+    linkLabel: 'Ver repo + schema DB'
+  },
+  {
+    cat: 'MARKETPLACE GENERAL VENEZUELA · PROYECTO ENORME',
+    name: 'Marketplace VZLA / Todo Anuncios',
+    desc: 'Carros, tecnología, hogar, moda: todo. Catálogo con filtros avanzados, chat Realtime Supabase, sistema de créditos, verificación, reputación, push notifications, moderación automática, rate-limit, PWA offline, tasa BCV. Deploy Vercel vendet.online',
+    href: 'https://github.com/gtrespana-bit/Marketplace-vzla',
+    year: '2025',
+    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format',
+    tags: ['Marketplace','Supabase Realtime','Push + Credits','Moderación IA'],
+    stats: ['conversaciones + mensajes + reseñas + favoritos','categorias.ts con 8 categorías, marcas, campos dinámicos','SW stale-while-revalidate TTL 7d'],
+    linkLabel: 'Ver arquitectura completa'
+  }
+];
+
 const projects = [
   {
-    cat: 'Reforma Residencial / Astro SEO 98',
+    cat: 'Reforma Residencial / Astro SEO 98 · Lead Gen',
     name: 'ReformaT Venezuela',
-    desc: 'Web de alto estándar con sistema de SEO programático, 80+ landing locales, blog y performance 98. Genera leads orgánicos diarios.',
+    desc: 'Web de alto estándar con SEO programático, 80+ landings por zona (San Diego, Valencia...), blog, sitemap inteligente con prioridades por Carabobo, IndexNow, PWA. Genera leads diarios.',
     href: 'https://github.com/gtrespana-bit/reformat-venezuela',
     year: '2024-26',
     img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format',
-    tags: ['Astro','SEO Local','UI Premium']
+    tags: ['Astro','SEO Local','80+ landings']
   },
   {
-    cat: 'Houston Kitchens / US Market',
-    name: 'ReformaT Houston',
-    desc: 'Versión US English. Misma arquitectura, adaptada a mercado americano. Enfocada en ticket medio $25k+',
-    href: 'https://github.com/gtrespana-bit/reformat-houston',
-    year: '2025',
-    img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format',
-    tags: ['i18n','Astro 5','Lead Gen']
+    cat: 'SaaS Construcción / Python Desktop + PDF',
+    name: 'Presupuestos — ReformaT',
+    desc: 'App desktop Python con ventana propia, catálogo de partidas reutilizables, importar Excel CYPE, firma digital, PDF con ReportLab + Lato + marca de agua, facturas, backup ZIP. No es web: es software.',
+    href: 'https://github.com/gtrespana-bit/presupuestos',
+    year: '2025-26',
+    img: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200&q=80&auto=format',
+    tags: ['Python','ReportLab PDF','CYPE Import','Desktop App']
   },
   {
     cat: 'Estudio Digital / Next.js + 3D',
     name: 'Majestic Web Studio',
-    desc: 'Agencia premium con Spline 3D, Framer Motion, magnetic buttons, holo cards. Concepto medio-alto tech.',
+    desc: 'Agencia premium con Spline 3D, Framer Motion, magnetic buttons, holo cards. Concepto boutique caro.',
     href: 'https://github.com/gtrespana-bit/Majestic',
     year: '2025',
     img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format',
     tags: ['Next.js 14','3D','Framer']
   },
   {
-    cat: 'Clínicas & Inmobiliarias',
-    name: 'Colección Beauty & Salud',
-    desc: '12+ webs para clínicas estéticas, dentales y veterinarias. Mismo patrón: confianza + agenda + WhatsApp.',
+    cat: 'Colección 20+ Clínicas & Inmobiliarias',
+    name: 'Beauty, Salud & Real Estate',
+    desc: '12+ webs HTML pero convertidas en sistema: misma conversión WhatsApp, fotos optimizadas, agenda. EuroKlinik, PodoDent, AxularVet, Vanity Face, GGBeauty Premium.',
     href: '#',
     year: '2023-25',
     img: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&auto=format',
-    tags: ['Conversion','WhatsApp','Local']
+    tags: ['Conversion','WhatsApp','Local SEO']
   },
 ];
 
 const services = [
-  { n:"01", t:"Diseño Web a Medida", d:"Nada de plantillas de $50. Cada web se diseña desde cero según tu cliente ideal, ticket y posicionamiento. Figma + código limpio.", price:"Desde $1.200" },
-  { n:"02", t:"Re-Diseño Estratégico", d:"Ya tienes web pero se ve barata. La rehacemos para que refleje el nivel de tu oficina, clínica o inmobiliaria. Mismo dominio, 3x más confianza.", price:"Desde $900" },
-  { n:"03", t:"SEO Local + Performance", d:"Para que aparezcas cuando busquen 'clínica estética San Diego' o 'remodelación Valencia'. Arquitectura como ReformaT, no trucos.", price:"Incluido" },
+  { n:"01", t:"Diseño Web a Medida", d:"Nada de plantillas de $50. Cada web se diseña desde cero según tu cliente ideal, ticket y posicionamiento. Figma + código limpio. Stack Astro.", price:"Desde $1.200" },
+  { n:"02", t:"Re-Diseño Estratégico", d:"Ya tienes web pero se ve barata. La rehacemos para que refleje el nivel de tu oficina. Mismo dominio, 3x más confianza.", price:"Desde $900" },
+  { n:"03", t:"Plataformas & Marketplaces", d:"Si necesitas más que una landing: VendeT demuestra que puedo con Supabase, S3, chat, auth, pagos, admin, PWA. Para inmobiliarias o clasificados.", price:"Desde $5k" },
+  { n:"04", t:"SEO Local + Performance + PWA", d:"Para que aparezcas en 'clínica estética San Diego'. Arquitectura probada en ReformaT + Marketplace (sitemap, IndexNow, OG).", price:"Incluido" },
 ];
 
 const process = [
@@ -101,7 +127,7 @@ const process = [
             demostrarlo.
           </h1>
           <p data-reveal class="mt-8 max-w-[560px] text-[17px] md:text-[19px] leading-[1.5] text-[#3D3A36] font-light">
-            Estudio boutique para <span class="font-medium text-[#0E0E10]">clínicas, inmobiliarias, reformas y estéticas</span> que no pueden permitirse verse baratas. Diseño medio-alto, performance 95+ y SEO local real — como <em>ReformaT</em>, no plantilla de ThemeForest.
+            Estudio boutique para <span class="font-medium text-[#0E0E10]">clínicas, inmobiliarias, reformas y estéticas</span> que no pueden verse baratas. Pero con músculo para <span class="font-medium text-[#0E0E10]">marketplaces completos</span>: VendeT Inmuebles y Marketplace VZLA (Next.js + Supabase + S3 + Realtime + PWA). Desde landing que convierte hasta plataforma que escala.
           </p>
 
           <div data-reveal class="mt-10 flex flex-wrap gap-3">
@@ -171,13 +197,15 @@ const process = [
 
       <!-- trust strip -->
       <div data-reveal class="mt-20 md:mt-32 border-y border-[#E8E2D9] py-6 flex flex-wrap gap-3 items-center justify-between">
-        <div class="text-[11px] tracking-[0.2em] uppercase text-[#7A758F]">Experiencia comprobada en:</div>
-        <div class="flex flex-wrap gap-2 text-[13px]">
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Clínicas Estéticas</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Inmobiliarias</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Reformas de Lujo</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Veterinarias</span>
-          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Centros Médicos</span>
+        <div class="text-[11px] tracking-[0.2em] uppercase text-[#7A758F]">Stack real probado en producción:</div>
+        <div class="flex flex-wrap gap-2 text-[12px]">
+          <span class="px-3 py-1 rounded-full bg-[#0E0E10] text-white border">Next.js 14</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Astro SEO 98</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Supabase SSR</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">S3 + Sharp</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Realtime Chat</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">PWA + Push</span>
+          <span class="px-3 py-1 rounded-full bg-white border border-[#E8E2D9]">Python PDF Engine</span>
         </div>
       </div>
     </div>
@@ -208,48 +236,79 @@ const process = [
     </div>
   </section>
 
-  <!-- TRABAJOS -->
+  <!-- TRABAJOS ENORMES -->
   <section id="trabajos" class="bg-[#0E0E10] text-[#FFFEFB] py-20 md:py-28 relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.06]" style="background-image: linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px); background-size: 40px 40px"></div>
     <div class="relative mx-auto max-w-[1440px] px-6 md:px-10">
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div data-reveal>
-          <div class="text-[11px] tracking-[0.25em] uppercase text-white/50">Portafolio seleccionado</div>
-          <h2 class="mt-4 font-serif text-[36px] md:text-[64px] leading-[0.9] tracking-[-0.03em] max-w-[720px]">No te muestro mockups. Te muestro webs que ya generan clientes.</h2>
+          <div class="text-[11px] tracking-[0.25em] uppercase text-white/50">Proyectos enormes · No solo landings</div>
+          <h2 class="mt-4 font-serif text-[36px] md:text-[64px] leading-[0.9] tracking-[-0.03em] max-w-[780px]">Si puedo construir un marketplace inmobiliario completo, puedo con tu web premium.</h2>
         </div>
-        <div data-reveal class="text-[14px] text-white/60 max-w-[340px]">Todo esto está en tus repos públicos. No es teoría. Son proyectos reales con scripts de SEO, IndexNow y performance 95+.</div>
+        <div data-reveal class="text-[14px] text-white/60 max-w-[360px]">Estos no son plantillas. Son plataformas en producción con DB real, auth, pagos, chat, PWA, Sentry y schema complejo documentado. Eso es nivel medio-alto real.</div>
       </div>
 
-      <div class="mt-16 grid md:grid-cols-2 gap-6 md:gap-8">
-        {projects.map((p)=>(
-          <a data-reveal href={p.href} target="_blank" class="group relative rounded-[28px] overflow-hidden bg-[#1A1A1E] border border-white/10 hover:border-white/20 transition">
-            <div class="aspect-[16/11] overflow-hidden">
-              <img src={p.img} class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-[1.2s] ease-[cubic-bezier(.22,1,.36,1)]" alt={p.name} />
+      <div class="mt-16 grid lg:grid-cols-2 gap-6 md:gap-8">
+        {massiveProjects.map((p)=>(
+          <a data-reveal href={p.href} target="_blank" class="group relative rounded-[28px] overflow-hidden bg-[#15151A] border border-white/10 hover:border-white/20 transition">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src={p.img} class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-[1.2s] ease-[cubic-bezier(.22,1,.36,1)] opacity-90 group-hover:opacity-100" alt={p.name} />
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-            <div class="absolute top-4 left-4 right-4 flex justify-between">
-              <div class="px-3 py-1 rounded-full bg-white/10 backdrop-blur border border-white/20 text-[10px] tracking-[0.2em] uppercase">{p.cat}</div>
-              <div class="px-3 py-1 rounded-full bg-white text-black text-[10px]">{p.year}</div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+            <div class="absolute top-4 left-4 right-4 flex justify-between items-start gap-2">
+              <div class="px-3 py-1 rounded-full bg-[#C9A84C] text-black text-[10px] tracking-[0.2em] uppercase font-semibold">{p.cat}</div>
+              <div class="px-3 py-1 rounded-full bg-white text-black text-[10px] font-mono">{p.year} · ENORME</div>
             </div>
             <div class="absolute bottom-0 left-0 right-0 p-7">
-              <div class="font-serif text-[28px] leading-none">{p.name}</div>
-              <div class="mt-3 text-[14px] leading-[1.5] text-white/70 max-w-[52ch]">{p.desc}</div>
+              <div class="font-serif text-[30px] leading-none">{p.name}</div>
+              <div class="mt-3 text-[13px] leading-[1.5] text-white/70 max-w-[58ch]">{p.desc}</div>
+              <div class="mt-3 text-[11px] leading-[1.4] text-white/50 font-mono">
+                {p.stats.map(s=> <div>• {s}</div>)}
+              </div>
               <div class="mt-4 flex flex-wrap gap-2">
                 {p.tags.map(t=> <span class="text-[11px] px-2.5 py-1 rounded-full bg-white/10 border border-white/10">{t}</span>)}
               </div>
+              <div class="mt-5 inline-flex items-center gap-2 text-[12px] font-medium text-white border-b border-white/20 pb-1">{p.linkLabel} →</div>
             </div>
           </a>
         ))}
       </div>
 
-      <div data-reveal class="mt-12 rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 flex flex-wrap gap-8 items-center justify-between">
-        <div class="text-[13px] text-white/60">Stack que usaremos para ti — el mismo que ya te funcionó:</div>
-        <div class="flex flex-wrap gap-3 text-[12px]">
-          <span class="px-3 py-1.5 rounded-full bg-white text-black font-medium">Astro 5</span>
-          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">Tailwind</span>
-          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">Sitemap & IndexNow</span>
-          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">WhatsApp Conversion</span>
-          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">PWA Ready</span>
+      <div class="mt-16 border-t border-white/10 pt-12">
+        <div class="flex flex-wrap justify-between gap-6 items-end">
+          <h3 data-reveal class="font-serif text-[28px] md:text-[40px] leading-[0.9] tracking-[-0.03em] max-w-[520px]">Webs boutique que ya generan clientes.</h3>
+          <div data-reveal class="text-[13px] text-white/50 max-w-[320px]">Landings premium para negocios locales consolidados. Mismo estándar, menor alcance que VendeT, pero mismo cuidado.</div>
+        </div>
+        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {projects.map((p)=>(
+            <a data-reveal href={p.href} target="_blank" class="group relative rounded-[24px] overflow-hidden bg-[#1A1A1E] border border-white/10 hover:border-white/20 transition">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img src={p.img} class="w-full h-full object-cover group-hover:scale-[1.05] transition duration-[1.2s]" alt={p.name} />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+              <div class="absolute top-3 left-3 right-3 flex justify-between">
+                <div class="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur border border-white/20 text-[9px] tracking-[0.18em] uppercase">{p.cat}</div>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-5">
+                <div class="font-serif text-[18px] leading-none">{p.name}</div>
+                <div class="mt-2 text-[12px] leading-[1.4] text-white/60 line-clamp-3">{p.desc}</div>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  {p.tags.slice(0,2).map(t=> <span class="text-[10px] px-2 py-1 rounded-full bg-white/10 border border-white/10">{t}</span>)}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div data-reveal class="mt-12 rounded-2xl bg-white/[0.06] border border-white/10 p-6 md:p-8 flex flex-wrap gap-8 items-center justify-between">
+        <div class="text-[13px] text-white/60 max-w-[340px]">Stack que domino — de landing 98 performance a plataforma con 10 tablas y RLS:</div>
+        <div class="flex flex-wrap gap-2.5 text-[11px]">
+          <span class="px-3 py-1.5 rounded-full bg-white text-black font-medium">Astro 4 + Next.js 14</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">Supabase (Postgres + Auth + Storage + Realtime)</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">S3 + Sharp</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">PWA + Push</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 border border-white/10">Python PDF Engine</span>
         </div>
       </div>
     </div>
@@ -304,7 +363,7 @@ const process = [
         <h2 class="font-serif text-[36px] md:text-[64px] leading-[0.9] tracking-[-0.03em]">Servicios para negocios<br/>que ya están establecidos.</h2>
         <div class="text-[14px] text-[#5A5754] max-w-[320px]">No somos para emprendedores que buscan lo más barato. Somos para negocios que ya facturan y quieren verse del tamaño que son.</div>
       </div>
-      <div data-reveal class="mt-14 grid md:grid-cols-3 gap-6">
+      <div data-reveal class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map(s=>(
           <div class="rounded-[24px] bg-white border border-[#E8E2D9] p-7 md:p-8 flex flex-col">
             <div class="flex justify-between items-start">
@@ -366,11 +425,11 @@ const process = [
       <h3 data-reveal class="font-serif text-[36px] md:text-[48px] leading-[0.9] tracking-[-0.03em]">Preguntas frecuentes</h3>
       <div data-reveal class="divide-y divide-[#E8E2D9] border-y border-[#E8E2D9]">
         {[
-          {q:"¿Usas WordPress?", a:"No. Uso Astro / Next.js como en ReformaT y Majestic. 3x más rápido, sin plugins que se rompen, sin mantenimiento de WordPress. Si necesitas blog, lo tienes sin WordPress."},
-          {q:"¿Puedo ver el código? ¿Es mío?", a:"Sí. Te entrego repo privado en GitHub como todos tus proyectos. Tu web es tuya. No atada a mí."},
-          {q:"¿Haces logo e identidad?", a:"Dirección de arte básica incluida (tipos, colores, estilo de fotos). Logo completo es aparte, te recomiendo a alguien si lo necesitas premium."},
-          {q:"¿Cuánto tarda?", a:"2-3 semanas si me das contenido rápido. Si no tienes fotos, uso stock premium temporal y luego reemplazamos por reales."},
-          {q:"¿Trabajas con Venezuela y España?", a:"Sí. Mis webs ya están en ambos mercados. Sé cómo se busca en San Diego/Carabobo y en Lanzarote/Madrid. SEO local adaptado."},
+          {q:"¿Solo haces landings? Vi VendeT que es gigante", a:"Exacto, por eso VendeT Inmuebles y Marketplace VZLA están arriba. Son marketplaces completos con Supabase, S3, chat Realtime, auth, admin, PWA. Si puedo con eso, una landing premium es la parte fácil. Ofrezco desde $900 landing hasta $5k+ plataforma."},
+          {q:"¿Usas WordPress?", a:"No. Uso Astro / Next.js como en ReformaT, VendeT y Majestic. 3x más rápido, sin plugins que se rompen. VendeT demuestra que puedo manejar DB compleja, storage y realtime sin WordPress."},
+          {q:"¿El código es mío? Vi que entregas repos", a:"Sí. Como en todos tus repos públicos: te entrego repo privado en GitHub con schema documentado (DB_SCHEMA_COMPLETE.md como en VendeT). Tu proyecto no queda atado a mí."},
+          {q:"¿Cuánto tarda una web vs una plataforma?", a:"Landing boutique: 2-3 semanas. Plataforma tipo VendeT Inmuebles: 2-4 meses por fases (MVP catálogo → auth → chat → pagos). La web boutique genera clientes mientras construimos lo grande si lo necesitas."},
+          {q:"¿Trabajas con Venezuela y España?", a:"Sí. VendeT está pensado para Venezuela con tasa BCV y municipios. ReformaT Houston para US. Sé adaptar SEO local, moneda y UX según mercado."},
         ].map(f=>(
           <details class="group py-6 cursor-pointer">
             <summary class="list-none flex justify-between gap-6 text-[16px] font-medium">{f.q}<span class="shrink-0 w-6 h-6 rounded-full border border-[#E8E2D9] grid place-items-center group-open:rotate-45 transition">+</span></summary>
@@ -394,14 +453,14 @@ const process = [
             <a href={waLink} class="h-[52px] px-8 rounded-full bg-[#0E0E10] text-white text-[15px] font-medium inline-flex items-center gap-2 hover:shadow-xl hover:shadow-black/20 transition">Escribir por WhatsApp ahora →</a>
             <div class="h-[52px] px-6 rounded-full bg-white border border-[#E8E2D9] text-[13px] text-[#5A5754] grid place-items-center">Respuesta &lt; 2h · Lun-Sáb</div>
           </div>
-          <div class="mt-10 text-[11px] tracking-[0.18em] uppercase text-[#7A758F]">ReformaT Venezuela · Majestic · 30+ negocios locales · Performance 98 · SEO real</div>
+          <div class="mt-10 text-[11px] tracking-[0.18em] uppercase text-[#7A758F]">VendeT Inmuebles · Marketplace VZLA · ReformaT · Presupuestos Python · 30+ negocios · Supabase + PWA</div>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="mx-auto max-w-[1440px] px-6 md:px-10 py-10 flex flex-wrap justify-between gap-6 text-[12px] text-[#7A758F] border-t border-[#E8E2D9] mt-4">
-    <div>© 2026 Diseño Web Boutique. Inspirado en <a href="https://github.com/gtrespana-bit/reformat-venezuela" class="underline">ReformaT</a> & <a href="https://github.com/gtrespana-bit/Majestic" class="underline">Majestic</a>. Hecho en Astro.</div>
+    <div>© 2026 Diseño Web Boutique. De <a href="https://github.com/gtrespana-bit/vendet-inmuebles" class="underline">VendeT (Next.js+Supabase+S3)</a> a <a href="https://github.com/gtrespana-bit/reformat-venezuela" class="underline">ReformaT (Astro SEO 98)</a>. Hecho en Astro.</div>
     <div class="flex gap-6"><a href={waLink} class="hover:text-[#0E0E10]">WhatsApp</a><span>San Diego, Carabobo — VE / Lanzarote — ES</span></div>
   </footer>
 
